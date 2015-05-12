@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Badongo Pics</title>
+
+<script type="text/javascript"> 
+function random(){
+	var random_no = Math.ceil(5285000*Math.random())
+	return random_no;
+}
+function bigpic(link_id, num){	
+	document.getElementById(link_id).onclick=function(){
+		document.getElementById("big").src = "http://www.badongo.com/t/800/" + num;
+	}			
+}
+function closebigpic(){
+	document.getElementById("big").src = "";
+}
+function loadpic(){
+	var main = "";
+	var num;
+	var pic_total = 20;
+	
+	var start = document.URL.replace(/.*?start=/, "");
+	start = start.replace(/#.*/, "");	
+	var startPattern = /^[0-9]{1,9}$/;
+	var startValidate = startPattern.test(start);
+	
+	for(var i=0;i<=pic_total;i++){
+		var link_id = "a" + i;
+		var extend_id = "e" + i;
+		main = main + "<a id=" + link_id + " href=><img border=0 id=" + i + " src=></a><a class=extend id=" + extend_id + " href=>+</a>";
+	}
+	document.getElementById("main").innerHTML = main;
+
+	for(var i=0;i<=pic_total;i++){
+		var link_id = "a" + i;
+		var extend_id = "e" + i;
+		num = random();			
+		if(startValidate){
+			num = parseInt(start) + i;
+		}		
+		
+		document.getElementById(i).src = "http://www.badongo.com/t/150/" + num;
+		document.getElementById(link_id).href = "javascript:null(0)";		
+		document.getElementById(extend_id).href = "?start=" + num;
+		
+		bigpic(link_id, num);
+		
+		if(startValidate){
+			document.getElementById(extend_id).style.display = "none";
+		}		
+	}
+		
+	if(startValidate){
+		var num = parseInt(start);
+		var previous = num - pic_total - 1;
+		var next = num + pic_total + 1;
+		document.getElementById("previous").href = "?start=" + previous;
+		document.getElementById("next").href = "?start=" + next;		
+	}
+	
+	
+}
+
+function testKeyCode(e) {
+    var keycode;
+    if (window.event) keycode = window.event.keyCode;
+    else if (e) keycode = e.which;
+    var e = e || window.event;
+    if(keycode==49){//1
+      window.location.href = document.getElementById("previous").href; 
+    }
+		
+    if(keycode==50){//2
+      window.location.href = document.getElementById("next").href; 
+    }
+
+    if(keycode==51){//3
+      window.location.href = "badongoX.html";
+    }
+
+    if(keycode==52 || keycode==27){//4, ESC
+      closebigpic();
+    }	
+	
+    if(keycode==82){//4, ESC
+      window.location.href = "badongoX.html";
+    }
+
+ }
+ 
+ document.onkeydown = testKeyCode;
+</script>
+
+<style>
+.extend{color:#888;text-decoration:none}
+.extend:hover{font-size:36px;color:red;}
+#big{
+position:absolute;
+float:left;
+}
+</style>
+</head>
+<body onload="loadpic()">
+<img id="big" src="">
+<DIV ID="wrapper">	
+	<DIV ID="main">
+
+		<!--
+		<a id="a1" href=""><img border="0" alt="" id="1" src=""></a>
+		<a id="a2" href=""><img border="0" alt="" id="2" src=""></a>
+		<a id="a3" href=""><img border="0" alt="" id="3" src=""></a>
+		<a id="a4" href=""><img border="0" alt="" id="4" src=""></a>
+		<a id="a5" href=""><img border="0" alt="" id="5" src=""></a>
+		<a id="a6" href=""><img border="0" alt="" id="6" src=""></a>
+		<a id="a7" href=""><img border="0" alt="" id="7" src=""></a>
+		<a id="a8" href=""><img border="0" alt="" id="8" src=""></a>
+		<a id="a9" href=""><img border="0" alt="" id="9" src=""></a>
+		<a id="a10" href=""><img border="0" alt="" id="10" src=""></a>
+		!-->
+	</DIV>
+	<div id="source"></div>
+	<div id="navigator"><br>1.<a id=previous href=>Previous (Shortcut: 1)</a> 2.<a id=next href=>Next (Shortcut: 2)</a> (e.g. <a href="?start=5566">?start=5566</a>) 3.<a id=random href=>Random (Refresh, Shortcut: 3 , or F5)</a> 4.<a id="closebig" href="javascript:closebigpic()">Close big pic (Shortcut: 4, r or Esc)</a>
+	</div>
+
+</DIV>
+
+</body>
+</html>

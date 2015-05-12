@@ -1,0 +1,48 @@
+img,a,div{margin:0;padding:0;}
+body{
+background-color: #f6f6f6;
+font-family:"Myriad Pro",Helvetica,Arial sans-serif;
+font-size: 1.6em;
+}
+#letter{
+font-size: 0.7em;
+}
+a{
+color:#0063DC;
+text-decoration:none;
+}
+a:hover{
+color:#FF0084;
+border-bottom:1px dotted #FF0084;
+}
+.center{
+text-align:center;
+}
+#container{
+width: 790px;
+margin:auto;
+}
+.red{
+color:red;
+}
+input{
+width: 16em;
+height: 2em;
+}
+#start{
+width: 100%;
+height: 4em;
+}
+.hidden{
+display:none;
+}
+.page{
+ text-decoration: underline;
+}
+#page_nav{
+ margin-top:1em;   
+}
+.images{
+width:95%;
+height:95%;
+}

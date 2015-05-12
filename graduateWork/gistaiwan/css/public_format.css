@@ -1,0 +1,35 @@
+#wrapper #main #left #global_header { 
+float : left; 
+width : 674px; 
+margin-left : 50px; 
+} 
+#wrapper #main #left .global_header_img { 
+float : left; 
+margin-bottom : 12px; 
+margin-left : 83px; 
+} 
+#wrapper #main #left .global_header_img_program { 
+float : left; 
+margin-bottom : 12px; 
+} 
+#wrapper #main #left #global_content { 
+float : left;
+width: 720px;
+margin-left : 50px; 
+font-size : 12px; 
+font-family : Arial; 
+} 
+#wrapper #main #left .global_title_img { 
+margin-top : 22px; 
+margin-bottom : 12px; 
+} 
+#wrapper #main #left .global_content_subtitle { 
+color : #a35075; 
+font-weight : bold; 
+font-size : 14px; 
+} 
+#wrapper #main #left .global_content_subtitle_v2 { 
+color : #1267a3; 
+font-weight : bold; 
+font-size : 14px; 
+}

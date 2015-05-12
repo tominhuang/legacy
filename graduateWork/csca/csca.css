@@ -1,0 +1,23 @@
+.tricon, .openerContainer, .message2, .trScaffolding{
+display:none;
+}
+.elementsButton{
+font-size: 1.5em;
+font-family: Tahoma,Geneva,Kalimati,sans-serif;
+font-weight: bold;
+}
+.replyitems a{
+font-size: 1.4em;
+color: #00f;
+}
+#scaffolding{
+display: none;
+text-align:left;
+position: fixed;
+right: 33px;
+bottom: 0;
+padding: 8px;
+background: #ccc;
+border: 1px solid #777;
+z-index: 100;
+}

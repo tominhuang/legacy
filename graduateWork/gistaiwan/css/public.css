@@ -1,0 +1,93 @@
+#wrapper #main #left { 
+float : left; 
+width : 802px;
+min-height: 630px;
+margin-top : 24px; 
+margin-bottom : 2px;
+} 
+#wrapper #main #left #sitemap { 
+float : left; 
+font-size : 11px; 
+border : 1px solid #111; 
+padding : 4px 8px 3px 7px; 
+margin-left:1px;
+} 
+#wrapper #main #left #process { 
+display: none;
+position: absolute;
+top:2px;
+left:0px;
+border: 1px solid #999;	
+padding: 2px 0px 2px 4px;
+font-size: 10px;
+color: #fff;
+width: 50px; 
+} 
+#wrapper #main .right { 
+float : right; 
+width : 166px; 
+margin-top : 24px; 
+margin-right : 2px; 
+} 
+#wrapper #main .right .right_title { 
+margin-left : 6px; 
+} 
+#wrapper #main .right .right_inside { 
+float : right; 
+text-align : left; 
+width : 144px; 
+font-size : 10px; 
+color : #111; 
+border : 1px solid #111;
+padding : 8px 0px 14px 10px; 
+margin-right: 2px;
+} 
+#wrapper #main .right .right_inside .info_list { 
+margin-top : 8px;
+} 
+#wrapper #main .right .right_inside{ 
+font-size : 11px; 
+}
+#wrapper #main .right #info3_inside{ 
+border : 2px solid #1165a1;
+}
+#wrapper #main .right #info4_inside{ 
+border : 2px solid #a55474;
+}
+#wrapper #main .right #info5_inside{ 
+border : 2px solid #7f7f7f;
+}
+#wrapper #main .right #login, #wrapper #main .right #info2_inside{ 
+font-family : Tahoma; 
+font-size : 10px;
+border : 2px solid #474c83;
+} 
+#wrapper #main .right #login .logintype, #wrapper #main .right #login .logininput { 
+margin : 0 0 6px 0; 
+} 
+#wrapper #main .right #login .logintype #checkbox { 
+border : 0; 
+margin : 0; 
+} 
+#loginerror, .errorwords { 
+color : red; 
+} 
+.loginforget { 
+margin-top : 12px; 
+} 
+.loginButton { 
+color : #111; 
+font-family : Arial; 
+background-color : #fff; 
+padding : 0 3px 0 3px; 
+font-size : 11px; 
+} 
+#loginButton1:hover, #loginButton2:hover { 
+color : #fff; 
+background-color : #111; 
+cursor : pointer; 
+font-size : 11px; 
+}
+img{
+border:0;
+} 

@@ -1,0 +1,167 @@
+img,a,div{margin:0;padding:0;}
+body{
+background-color: #f6f6f6;
+font-family:"Myriad Pro",Helvetica,Arial sans-serif;
+}
+a{
+color:#0063DC;
+text-decoration:none;
+}
+a:hover{
+color:#FF0084;
+border-bottom:1px dotted #FF0084;
+}
+img{
+border:none !important;
+overflow:hidden;
+}
+::selection{
+background:#ff3ea1;
+color:#fff; /* Webkit */
+}
+::-moz-selection{
+background:#ff3ea1;
+color:#fff;/* Firefox */
+}
+#container{
+width: 780px;
+margin:auto;
+}
+#header{
+padding:10px 0;
+overflow:hidden;
+}
+h1{
+padding:0;margin:0;
+float:left;
+font-size:2.3em;
+}
+.flick{
+color:#0063DC;
+}
+.r{
+color:#FF0084;
+}
+#instant{
+font-size:0.5em;
+}
+#search{
+width:420px;
+color:#666;
+margin-top:5px;
+padding:10px 5px;
+height:1em;
+float:left;
+margin-right:3px;/*fix for box shadow glow*/
+margin-left:2em;
+border:1px solid #ccc;
+border-radius:4px;
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+-khtml-border-radius:4px;
+display:block;
+}
+input {
+outline:none;
+transition: all 0.1s ease-in-out;
+-webkit-transition: all 0.1s ease-in-out;
+-moz-transition: all 0.1s ease-in-out;
+border-radius:3px;
+-webkit-border-radius:3px;
+-moz-border-radius:3px;
+border:1px solid rgba(0,0,0, 0.2);
+}
+input:focus {
+border: #ff3ea1 1px solid;
+box-shadow: 0 0 5px #ff3ea1;
+-webkit-box-shadow: 0 0 5px #ff3ea1; 
+-moz-box-shadow: 0 0 5px #ff3ea1; 
+}
+.loading{
+position:absolute;
+top:170px;
+left:50%;
+margin-left:-300px;
+}
+#results{
+min-height:400px;
+text-align:center;
+position:relative;
+clear:both;
+padding:10px 0;
+border-top:#cbcbcb 1px dotted;
+}
+#results img{
+margin:10px 0;
+}
+.img{
+position:relative;
+float:left;
+margin:0 auto;
+}
+.img:hover img{
+opacity:0.8;
+filter:alpha(opacity=80);
+}
+.caption{
+display:none;
+}
+.img:hover .caption{
+display:block;
+opacity:0.75;
+filter:alpha(opacity=75);
+position:absolute;
+bottom:10px;
+left:0;
+width:100%;
+background:#000;
+padding:10px 0;
+color:#fff;
+text-align:center;
+z-index:10;
+font-weight:bold;
+}
+.picContainer{
+float:left;
+width:16em;
+padding-right:0.2em;
+}
+.float_right{
+clear:both;
+}
+#previous{
+display:none;
+}
+#pages{
+display:none;
+padding-top:2em;
+clear:both;
+text-align:center;
+}
+#searchform{
+position: relative;
+}
+#suggestions{ 
+visibility: hidden;
+position: relative; 
+top: 0px; 
+left:-164px; 
+width:422px; 
+border:1px solid pink;
+float:right;
+height:19px;
+opacity:0.75;
+padding:4px;
+}
+.suggestResults:hover{
+background: lightblue;
+}
+#footer{
+text-align:center;
+font-size:0.8em;
+padding:10px 0;
+border-top:1px dotted #cbcbcb;
+clear:both;
+color:#666;
+overflow:hidden;
+}

@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>個別寄信</title>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+</head>
+<body>
+
+<h2>群組寄信</h2>
+<form name="SendMessage" Method="post" action="single.jsp" enctype="multipart/form-data">
+  <p>寄信人：
+    <input name="From" type="text" value="92306075@nccu.edu.tw" size="30" maxlength="30">
+  </p>
+  <p>收信人：
+    <select name="select">
+      <option value="0" selected>未定義</option>
+      <option value="1">少年漫畫</option>
+      <option value="2">少女漫畫</option>
+      <option value="3">武俠小說</option>
+      <option value="4">文藝小說</option>
+      <option value="5">所有會員</option>
+    </select>
+  </p>
+  <p>主題：<input type="text" name="Subject" size="30" maxlength="30"></p>
+  <p>格式：<select name="Type" size="1">
+		<option value="text/plain" selected>Text</option>
+		<option value="text/html">HTML</option>
+           </select></p>
+  <p>附件：
+    <input type="file" name="FileName" size="20" maxlength="20"></p>         
+  <p>內容：</p><p><textarea name="Message" cols=40 rows=5></textarea></p>
+  
+  <input type="submit" value="傳送">
+  <input type="reset" value="清除">
+</form>
+
+</body>
+</html>

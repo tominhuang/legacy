@@ -1,0 +1,42 @@
+
+<script language="javascript">
+/*
+var fileurl;
+fileurl = "000" + parseInt((Math.random()*2+1));
+fileurl = fileurl.substring(fileurl.length-3,fileurl.length);
+top.frames["main"].location.href = fileurl + ".html";//frames¡G«ü©w®Ø¬[
+*/
+
+//document.write(Math.random()+'<br>');
+//document.write(Math.random()*2+'<br>');
+//document.write(parseInt(Math.random()*2)+'<br>');
+//document.write(parseInt(Math.random()*2+1)+'<br>');
+
+
+var randomNumber;
+var chanceOneCount;
+var chanceTwoCount;
+var sample=[100,1000,10000,100000,100000];
+
+for(var sampleNum=0; sampleNum < sample.length ; sampleNum++){
+
+	chanceOneCount=0;
+	chanceTwoCount=0;
+
+	for(var i=0 ; i< sample[sampleNum] ; i++){
+		randomNumber = parseInt(Math.random()*2+1);
+		if(randomNumber==1){
+			chanceOneCount++;
+		}
+		if(randomNumber==2){
+			chanceTwoCount++;
+		}
+	}
+
+	document.write("sampleNum: " +sampleNum + ", sampleSize: " + sample[sampleNum] + "<br>");
+	document.write("chanceOneCount: " +chanceOneCount + "<br>");
+	document.write("chanceTwoCount: " +chanceTwoCount + "<br><br>");	
+}
+
+
+</script>

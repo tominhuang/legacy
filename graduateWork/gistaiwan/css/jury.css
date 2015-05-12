@@ -1,0 +1,19 @@
+.jury_img_container{
+position:relative;
+margin-left:50px;
+}
+.cv{
+position:absolute;
+z-index:100;
+right: 40px;
+top:128px;
+}
+#cv1{
+}
+#cv2{
+}
+#cv3{
+}
+.jury_img{
+margin-bottom:50px;
+}

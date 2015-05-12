@@ -1,0 +1,60 @@
+.title{
+border:1px solid #666;
+padding:4px;
+color:white;
+background-color:#24618E;
+}
+.evidence,.reply,.taskDescription,.findDescription,.postFrame,.noticeDescription{
+border-left:1px solid #666;
+border-right:1px solid #666;
+border-bottom:1px solid #666;
+}
+.evidence:hover{
+border:2px solid #000;
+}
+.listSummary,.browseMode,.reply,.postFrame,.taskDescription,.findDescription,.noticeDescription{
+padding:4px;
+}
+.editMode{
+padding-left:44px;
+padding-right:44px;
+padding-top:20px;
+}
+.listSummary:hover{
+background-color:yellow;
+}
+.listMode:hover{
+color:#00008B;	
+cursor:pointer;
+}
+#postContainer{
+display:none;
+margin-top:10px;
+padding-left:44px;
+}
+.browseMode,.editMode,.editEvidence,.deleteEvidence,.target,.replyTrue,.replyDone,#searchHintWord,.initial,#dialog,#secret{
+display:none;
+}
+.replyMessage{
+margin-left:32px;
+margin-right:32px;
+margin-top:24px;
+color:#333;
+padding:8px;
+background-color:#ddd;
+}
+.replyDone{
+margin-top:12px;
+margin-bottom:6px;
+color:navy;
+}
+#task{
+margin-top:24px;
+}
+.closeEvidence,.editEvidence,.deleteEvidence{
+color:navy;
+}
+.saveResult{
+color:#24618E;
+padding-left:12px;
+}

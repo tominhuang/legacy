@@ -1,0 +1,161 @@
+#wrapper #main #sitemap{
+	float:left;	
+	font-size: 11px;
+	border: 1px solid #111;
+	padding: 4px 8px 3px 7px;
+	margin: 24px 0px 0px 0px;
+}
+
+#wrapper #main #reg_title{
+	float: left;
+	width:972px;
+	margin: 0 auto;
+	text-align:center;
+	margin-bottom: 16px;
+}
+#wrapper #main #reg_note{
+	text-align: left;
+	font-size: 14px;
+	overflow: hidden;
+	padding-left: 4px;
+	padding-top: 2px;
+	margin-bottom: 16px;
+	border: 1px solid #000;
+}
+
+#wrapper #main #password_ex{
+	float: right;
+}
+
+#wrapper #main #step_num{
+	float: left;
+	margin: 24px 0px 0px 1px;	
+}
+
+#wrapper #main #step_num #step_img{
+
+}
+
+#wrapper #main #step_num #step_img .step_img_square{
+	margin: 1px 0px 0px 3px;
+}
+
+#wrapper #main #agreement, #wrapper #main #step3_content{
+	float: left;
+	width:972px;
+	margin:0px auto;
+	text-align:center;	
+	margin-top: 24px;
+	margin-bottom: 124px;
+}
+
+#wrapper #main #step3_content #step3_content_message{	
+	margin-top: 34px;
+}
+
+#submitbutton{
+	font-family: Times New Roman;
+}
+
+#wrapper #main #basic{
+	float: left;
+	width:972px;
+	margin:0 auto;
+	text-align:left;
+	
+	margin-top: 24px;
+	padding-bottom: 124px;
+}
+
+
+#wrapper #main #basic #form{
+	font-size: 12px;
+	margin:0 auto;
+	width: 90%;
+}
+
+#wrapper #main #basic #form .formline{
+	float: left;
+	margin-bottom: 12px;
+	width: 100%;	
+}
+
+#wrapper #main #basic #form .formline .star{	
+	color: #aa1493;
+	margin-left: 4px;
+}
+
+#wrapper #main #basic #form .formline .description{	
+	color: #666;
+}
+
+#wrapper #main #basic #form .leftitem{	
+	text-align:right;
+	padding-right: 12px;
+	float: left;
+	width: 132px;
+}
+
+#wrapper #main #basic #form .leftfield{
+	float: left;
+}
+
+#wrapper #main #basic #form .rightitem{
+	padding-left: 2px;
+	float: left;
+}
+
+#wrapper #main #basic #form .rightfield{
+	padding-left: 2px;
+	float: left;
+}
+
+#wrapper #main #basic #form .rightfieldtype{
+	float: left;
+	margin-left: 2px;
+}
+
+#wrapper #main #basic #form .flag {
+	padding-left: 8px;
+	padding-top: 5px;
+	float: left;	
+}
+#wrapper #main #basic #form #summitline{
+	float: right;
+	margin-top: 32px;
+	padding-right: 98px;
+}
+#wrapper #main #basic #form .summitbutton{
+	width: 8em;
+}
+
+#wrapper #main #basic #form .reg_submit{
+	margin-right: 89px;
+}
+
+#wrapper #main #basic #form #errorbox{
+	float: left;
+	margin-left: 144px;
+	padding: 16px;
+	width: 510px;	
+	border: 1px dashed black;
+	display: none;
+}
+
+#wrapper #main #basic #form #errorbox #errortitle{
+	color: black;
+}
+
+#wrapper #main #basic #form #errorbox #errorword{
+	margin-top: 6px;
+	color: red;
+}
+
+#wrapper #main #basic #form #errorbox #errorword{
+	margin-top: 6px;
+	color: #990000;
+}
+
+.errordescription{
+	color: #555555;
+}

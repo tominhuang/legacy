@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="author" content="tomin">
+    <title>Google AJAX Language API</title>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+    google.load("language", "1");
+    String.prototype.replaceAll  = function(s1,s2){   
+		return this.replace(new RegExp(s1,"gm"),s2);   
+    }  	
+	
+	var  ta;
+	
+	var ex1 = "蘋果";
+	var ex2 = "自行車，是一種二輪或三輪的小型陸上車輛。一般以人騎上腳踩踏板而驅動之。1791年，法國人西夫拉克制造出第一架代步的「木馬輪」小車，該車有前後兩個木質車輪，中間連著橫樑，上有一條板凳。該車沒有傳動鏈條，又無轉向裝置，但一般被認為是人類最早的自行車。1818年，德國看林人德萊斯也製做了一輛兩輪車，他在前輪上加上了一個控制方向的車把。1840年，英格蘭的鐵匠麥克米倫製造出可以由雙腳交替踩動從而帶動車輪滾動的自行車。資料來源：維基百科。";
+	var ex3 = "本程式採用創用CC－姓名標示─非商業性─相同方式分享 2.5 台灣。\nhttp://creativecommons.org/licenses/by-nc-sa/2.5/tw/\ntomin 2008.10.26";
+		
+    function doTranslate() {
+		var temp;
+		var mode;
+		
+		if(ta.length>33){
+			mode = "multiple";
+		}
+
+		google.language.translate(ta, "", "zh-tw", function(result) {
+		  if (!result.error) {		    			
+			if(mode=="multiple"){
+				temp = "<div class=\"languageType\">繁體中文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") + "</div>";
+			}else{
+				temp = "．繁體中文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+			}
+		  }
+		});		
+		
+		google.language.translate(ta, "", "zh-cn", function(result) {
+		  if (!result.error) {		    			
+			if(mode=="multiple"){
+				temp += "<div class=\"languageType\">簡體中文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+			}else{
+				temp += "．簡體中文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+			}
+		  }
+		});
+		
+		google.language.translate(ta, "", "en", function(result) {
+		  if (!result.error) {
+			if(mode=="multiple"){
+				temp += "<div class=\"languageType\">英文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+			}else{
+				temp += "．英文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+			}
+		  }
+		});
+
+		google.language.translate(ta, "", "ja", function(result) {
+		  if (!result.error) {		    
+			if(mode=="multiple"){
+				temp += "<div class=\"languageType\">日文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+			}else{
+				temp += "．日文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+			}
+		  }
+		});
+
+		google.language.translate(ta, "", "ko", function(result) {
+		  if (!result.error) {
+			if(mode=="multiple"){
+				temp += "<div class=\"languageType\">韓文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+			}else{
+				temp += "．韓文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+			}
+		  }
+		});	
+
+		google.language.translate(ta, "", "ru", function(result) {
+		  if (!result.error) {
+			if(mode=="multiple"){
+				temp += "<div class=\"languageType\">俄文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+			}else{
+				temp += "．俄文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+			}
+		  }
+		});			
+
+		google.language.translate(ta, "", "it", function(result) {
+		  if (!result.error) {
+			if(mode=="multiple"){
+				temp += "<div class=\"languageType\">義大利文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+			}else{
+				temp += "．義大利文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+			}
+		  }
+		});
+
+		google.language.translate(ta, "", "es", function(result) {
+		  if (!result.error) {
+			if(mode=="multiple"){
+				temp += "<div class=\"languageType\">西班牙文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+			}else{
+				temp += "．西班牙文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+			}
+		  }
+		});
+		
+		google.language.translate(ta, "", "pt", function(result) {
+		  if (!result.error) {
+			if(mode=="multiple"){
+				temp += "<div class=\"languageType\">葡萄牙文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+			}else{
+				temp += "．葡萄牙文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+			}
+		  }
+		});		
+		
+		google.language.translate(ta, "", "de", function(result) {
+		  if (!result.error) {
+			if(mode=="multiple"){
+				temp += "<div class=\"languageType\">德文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+			}else{
+				temp += "．德文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+			}
+		  }
+		});
+		
+		google.language.translate(ta, "", "fr", function(result) {
+		  if (!result.error) {
+			if(mode=="multiple"){
+				temp += "<div class=\"languageType\">法文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+			}else{
+				temp += "．法文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+			}
+		  }
+		});		
+
+		google.language.translate(ta, "", "hi", function(result) {
+		  if (!result.error) {		  
+			if(mode=="multiple"){
+				temp += "<div class=\"languageType\">印地文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+			}else{
+				temp += "．印地文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+			}
+			
+			if(mode=="multiple"){
+				//do nothing
+			}else{
+				temp += "．萬國碼 Unicode (UTF-8)：" +  encodeURI(ta).replaceAll("######", "<br />") + "<br />";
+			}			
+					
+			//innerHTML must write inside, don't know why
+			var container = document.getElementById("translation");
+			container.innerHTML = temp;
+		  }
+		});		
+    }
+    	
+	function doCheck() {
+		ta = document.getElementById("ta").value.replaceAll("\n", "######");;
+		document.getElementById("translation").innerHTML = "Now loading...";
+		
+		doDetect();
+		doTranslate();
+		return false;
+	}
+	
+	function loadex1(){
+		document.getElementById("ta").value = ex1;
+		doCheck();
+	}
+
+	function loadex2(){
+		document.getElementById("ta").value = ex2;
+		doCheck();
+	}
+
+	function loadex3(){
+		document.getElementById("ta").value = ex3;
+		doCheck();
+	}
+		
+	
+
+    function doDetect() {
+      
+      google.language.detect(ta, function(result) {
+        if (!result.error) {
+          var language = 'unknown';
+          for (l in google.language.Languages) {
+            if (google.language.Languages[l] == result.language) {
+              language = l;
+              break;
+            }
+          }
+		   var container = document.getElementById("detection");
+           container.innerHTML = "＃你輸入的語言是 <b>" + language + "</b><br /><br />";
+        }
+      });
+ 	  
+    }
+	
+	function setfocus(){
+	        document.form1.textarea.focus();
+	        return;
+	}	
+	
+	google.setOnLoadCallback(setfocus);
+    </script>
+	
+	<style>
+	#translation{
+		float: left;
+		font-size: 16px;
+	}
+
+	#detection{
+		font-size: 16px;	
+	}
+	#ex{
+		position: absolute;
+		font-size: 14px;
+		top: 17px;
+		left: 870px;
+		float: left;
+	}
+	
+	.languageType{
+		background: #EBFAFF;
+		border-left:12px solid #DBD4FA;
+		border-right:5.4em solid #DBD4FA;		
+		color: #990024;
+		font-size: 16px;
+		padding:3px;
+		width: 888px;
+	}
+	
+	.languageResult{
+		margin-bottom: 23px;
+		width: 888px;
+	}
+	
+	#ta{
+		color: green;	
+	}
+	
+	</style>
+  </head>
+
+  <body>
+  <form name="form1" id="form1" method="post" action="">
+    <p>
+      <textarea name="textarea" cols="104" rows="8" id="ta">請在此輸入你想要翻譯的文字或段落。</textarea>
+   <input type="button" name="Submit" value="翻譯" onclick="doCheck();" />
+    </p>
+  </form>
+  	<span id="ex">範例：<br /><a href="#" onclick="loadex1(); return false;">蘋果</a><br />
+	<a href="#" onclick="loadex2(); return false;">自行車</a><br /><br />
+	<a href="#" onclick="loadex3(); return false;">關於本程式</a>
+	</span>
+	<span id="detection"></span>
+    <span id="translation"></span>
+	<span id="translation2"></span>
+  </body>
+</html>

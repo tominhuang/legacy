@@ -1,0 +1,187 @@
+body {
+	margin: 0px;
+	text-align: center;
+	font-family:Arial;
+	font-size: 12px;
+}
+a{color:#222;}
+a:hover{color:#666;text-decoration:none;}
+/* Frame */
+#wrapper
+{
+    margin: auto;
+    width: 973px;	/* 972/6=162 unit*/
+	text-align: left;
+}
+/* Form */
+input,select{
+	color: #666;
+	font-size:12px;
+	font-family:Arial;
+	border:1px #AAA solid;
+	background: #fff;
+	padding:0;
+}
+.checkbox,.radiobutton {
+	border: 0px;
+} 
+textarea{
+	font-size: 12px;
+}
+/* banner & footer */
+#wrapper #top #banner{
+	height: 320px;
+	width: 972px;
+	margin-bottom: 2px;
+	margin-left:1px;
+	background-image: url(../images/banner.jpg);
+}
+#wrapper #top #banner2{
+	height: 320px;
+	width: 972px;
+	margin-bottom: 2px;
+	margin-left:1px;
+	background-image: url(../images/banner2.jpg);	
+}
+#wrapper #top #banner3{
+	height: 320px;
+	width: 972px;
+	margin-bottom: 2px;
+	margin-left:1px;
+	background-image: url(../images/banner3.jpg);		
+}
+#wrapper #top #banner:hover,#wrapper #top #banner2:hover,#wrapper #top #banner3:hover{
+cursor:pointer;
+}
+#wrapper #footer{
+	float:left;
+	height: 20px;
+	width: 972px;
+	font-size: 10px;
+	margin-top: 12px;
+	color: #888;
+}
+#wrapper #horizon{
+    float:left;
+	width: 972px;	
+	border-bottom: 1px solid #888;
+}
+ /*
+ * Menu - ThemeGray Style Sheet
+ * by Ian Reyes and Heng Yuan
+ */
+.ThemeGrayMenu, .ThemeGraySubMenuTable { 
+font-family : Tahoma; 
+font-size : 10px; 
+color : white; 
+background-color : #ffffff; 
+cursor : pointer; 
+cursor : pointer !important ; 
+white-space : nowrap; 
+} 
+.ThemeGraySubMenuTable { 
+font-size : 10px; 
+} 
+.ThemeGraySubMenu { 
+position : absolute; 
+display : block; 
+visibility : hidden; 
+overflow : hidden; 
+background-color : #fff;
+z-index:1000;
+} 
+.ThemeGraySubMenuTable { 
+border-collapse : separate; 
+/*  only work for ie
+	opacity : 0.9;
+	filter:Alpha(style=1,opacity=90);		
+*/
+} 
+.ThemeGrayMenuItem, .ThemeGrayMenuItemHover, .ThemeGrayMenuItemActive { 
+cursor : pointer; 
+cursor : pointer !important ; 
+white-space : nowrap; 
+} 
+.ThemeGrayMainItem, .ThemeGrayMenuItem { 
+width : 156px; 
+padding : 6px 0 6px 0; 
+text-align : center; 
+background-color : #000000; 
+border : 1px solid black; 
+} 
+.ThemeGrayMainItemHover, .ThemeGrayMainItemActive { 
+width : 156px; 
+padding : 6px 0 6px 0; 
+text-align : center; 
+color : black; 
+background-color : #fff; 
+border : 1px solid black; 
+} 
+.ThemeGrayMainFolderLeft, .ThemeGrayMainItemLeft, .ThemeGrayMainFolderText, .ThemeGrayMainItemText, .ThemeGrayMainItemRight, .ThemeGrayMainFolderRight { 
+border : 0; 
+background-color : inherit; 
+white-space : nowrap; 
+} 
+.ThemeGrayMenuFolderLeft, .ThemeGrayMenuItemLeft { 
+display : none; 
+padding : 3px 0 3px 3px; 
+background-color : #fff; 
+} 
+.ThemeGrayMenuFolderText, .ThemeGrayMenuItemText { 
+padding : 3px 9px 3px 5px; 
+width : 142px; 
+text-align : left; 
+white-space : nowrap; 
+color : black; 
+background-color : #fff; 
+border-left : 1px solid black; 
+border-right : 1px solid black; 
+border-bottom : 1px solid black; 
+} 
+.ThemeGrayMenuItemRight, .ThemeGrayMenuFolderRight { 
+display : none; 
+padding : 3px 0 3px 0; 
+border : 0; 
+white-space : nowrap; 
+background-color : #fff; 
+} 
+.ThemeGrayMenuItemHover .ThemeGrayMenuFolderLeft, .ThemeGrayMenuItemActive .ThemeGrayMenuFolderLeft, .ThemeGrayMenuItemHover .ThemeGrayMenuItemLeft, .ThemeGrayMenuItemActive .ThemeGrayMenuItemLeft, .ThemeGrayMenuItemHover .ThemeGrayMenuFolderText, .ThemeGrayMenuItemActive .ThemeGrayMenuFolderText, .ThemeGrayMenuItemHover .ThemeGrayMenuItemText, .ThemeGrayMenuItemActive .ThemeGrayMenuItemText, .ThemeGrayMenuItemHover .ThemeGrayMenuFolderRight, .ThemeGrayMenuItemActive .ThemeGrayMenuFolderRight, .ThemeGrayMenuItemHover .ThemeGrayMenuItemRight, .ThemeGrayMenuItemActive .ThemeGrayMenuItemRight { 
+color : white; 
+background-color : #000000; 
+} 
+.ThemeGrayMenuItemHover .ThemeGrayMenuFolderLeft, .ThemeGrayMenuItemActive .ThemeGrayMenuFolderLeft, .ThemeGrayMenuItemHover .ThemeGrayMenuItemLeft, .ThemeGrayMenuItemActive .ThemeGrayMenuItemLeft { 
+display : none; 
+} 
+.ThemeGrayMenuItemHover .ThemeGrayMenuFolderText, .ThemeGrayMenuItemActive .ThemeGrayMenuFolderText, .ThemeGrayMenuItemHover .ThemeGrayMenuItemText, .ThemeGrayMenuItemActive .ThemeGrayMenuItemText { 
+border-width : 0 0 1px; 
+border-style : solid; 
+} 
+.ThemeGrayMenuItemHover .ThemeGrayMenuFolderRight, .ThemeGrayMenuItemActive .ThemeGrayMenuFolderRight, .ThemeGrayMenuItemHover .ThemeGrayMenuItemRight, .ThemeGrayMenuItemActive .ThemeGrayMenuItemRight { 
+display : none; 
+} 
+td.ThemeGrayMenuSplit { 
+padding : 0; 
+margin : 0; 
+height : 1px; 
+border : 0; 
+background-color : #ffffff; 
+overflow : hidden; 
+} 
+div.ThemeGrayMenuSplit { 
+margin : 0; 
+height : 0; 
+border-bottom : 1px solid #ffffff; 
+font-size : 1px; 
+line-height : 1px; 
+overflow : hidden; 
+background-color : inherit; 
+} 
+.ThemeGrayMenuItem img.seq1 { 
+display : inline; 
+} 
+.ThemeGrayMenuItemHover seq2, .ThemeGrayMenuItemActive seq2 { 
+display : inline; 
+} 
+.ThemeGrayMenuItem .seq2, .ThemeGrayMenuItemHover .seq1, .ThemeGrayMenuItemActive .seq1 { 
+display : none; 
+}

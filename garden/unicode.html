@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="author" content="tomin" />
+<title>Unicode Query</title>
+<style type="text/css">
+#largeWord{
+font-size:2000%;
+text-align:center;
+}
+li{
+margin-bottom:1em;
+}
+#result{
+padding:1.4em;
+}
+</style>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript"> google.load("jquery", "1.3"); </script>
+<script type="text/javascript">
+$(function(){	
+	$("#query").click(query);
+	$("#digits").click(function(){
+		query2(48,57)
+	});
+	$("#uppercase").click(function(){
+		query2(65,90)
+	});
+	$("#lowercase").click(function(){
+		query2(97,122)
+	});
+	$("#han").click(function(){
+		query2(19968,64045)
+	});
+	$("#random").click(query3);		
+	$("#convert").click(convert);
+	$("#sentence").keypress(function(e) {
+        if(e.which == 13) convert();
+    });
+	$("#sentence").focus();
+	parseURL();
+});
+
+function query(){
+	var start=parseInt($("#start").val());
+	var end=parseInt($("#end").val());
+	var temp="";
+	
+	while(end>=start){		
+		temp+="&#" + start + ";";
+		start++;
+	}
+	$("#largeWord").hide();
+	$("#result").show().html(temp);
+}
+function query2(start, end){
+	$("#start").val(start);
+	$("#end").val(end);	
+	query();
+}
+function query3(){
+	var random=usefloor(19968,40869);	
+	largeWord(random);
+}
+function largeWord(num){
+	var word="&#" + num + ";";
+	$("#start").val(num);
+	$("#end").val(num);
+	$("#result").hide();
+	$("#largeWord").show().html(word);
+}
+function largeWordMulti(num){
+	var word=new Array();
+	
+	for(var i=0;i<num.length;i++){
+		word[i]="&#" + num[i] + ";";		
+	}
+	var sentence=word.join("");
+	
+	$("#result").hide();
+	$("#largeWord").show().html(sentence);
+	$("#sentence").val($("#largeWord").html());
+	if(num.length>3){
+		$("#largeWord").css("font-size","1500%");
+		$("#largeWord").css("text-align","left");
+	}
+}
+function usefloor(min,max) {
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+function convert() {
+	var num=$("#sentence").val();
+	var word=new Array();
+	
+	for(var i=0;i<num.length;i++){
+		word[i]=num.charCodeAt(i);		
+	}	
+	var sentence=word.join(",")
+	window.location.href="?"+sentence;
+}
+function parseURL() {
+	var start = document.URL.replace(/.*html\??/, "");	
+	
+	var startPattern = /^[0-9]{1,5}$/;
+	var startValidate = startPattern.test(start);	
+	if(startValidate){
+		largeWord(start);
+		$("#sentence").val(String.fromCharCode(start));			
+	}
+	
+	var startPatternMulti = /^[0-9]{1,5},[0-9]{1,5}/;
+	var startValidateMulti = startPatternMulti.test(start);
+	if(startValidateMulti){
+		var starts=start.split(",");
+		largeWordMulti(starts);
+	}
+	$("#convertResult").html(start);
+}
+</script>
+</head>
+<body>
+<h2>Unicode Query</h2>
+
+<ul>
+	<li>
+		Charater to Unicode, 		
+			<input name="textfield2" id="sentence" type="text" size="12" value="囧">		
+			<input type="button" id="convert" name="Convert" value="Convert">
+			<span id="convertResult"></span>
+	</li>
+	<li>
+		Unicode to Charater,
+		Start:<input name="textfield" id="start" type="text" size="12" value="33">
+		, End:<input name="textfield1" id="end" type="text" size="12" value="65535">
+		<input type="button" id="query" name="Query" value="Query">
+		<ul>
+			<li>
+				E.g., <a href="javascript:void(0)" id="digits">Digits</a>
+				, <a href="javascript:void(0)" id="uppercase">Uppercase Letters</a>
+				, <a href="javascript:void(0)" id="lowercase">Lowercase Letters</a>
+				, <a href="javascript:void(0)" id="han">漢字 (Han Character)</a>		
+				, <a href="javascript:void(0)" id="random">毎日一字</a>	
+			</li>
+		</ul>
+	</li>
+</ul>
+
+<div id="result"></div>
+<div id="largeWord"></div>
+
+</body>
+</html>

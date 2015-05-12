@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>flickr Instant</title> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="Flickr Instant Search" /> 
+<meta name="keywords" content="Flickr,Instant,Search" /> 
+<meta property="og:title" content="Flickr Instant"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="http://web.cc.ntnu.edu.tw/~697080342/flickr/logo.png"/>
+<meta property="og:url" content="http://web.cc.ntnu.edu.tw/~697080342/flickr/"/>
+<meta property="og:site_name" content="Flickr Instant "/>
+<link rel="SHORTCUT ICON" href="http://web.cc.ntnu.edu.tw/~697080342/flickr/favicon.png">
+<link type="text/css" rel="stylesheet" href="flickr.css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<h1><a href="http://flickr.com"><span class="flick">flick</span><span class="r">r</span></a> <span id="instant">instant</span></h1>
+		 <div id="searchform">
+			<input id="search" type="text"/>
+			<div id="suggestions">
+				<div class="suggestResults" id="suggest1"></div>
+				<div class="suggestResults" id="suggest2"></div>
+			</div>
+		 </div>
+	</div>
+	<div id="results" class="image-overlay"></div>	
+	<div id="pages"><a href="javascript:void(0)" id="previous">Prev</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" id="next">Next</a></div>
+	<div id="footer">
+		<p><a href="http://flickr.com"><span class="flick">Flick</span><span class="r">r</span></a> instant created by <a href="http://twitter.com/jamesrwhite">James White</a>
+		and modified by <a href="http://www.plurk.com/noking">tomin</a>
+		</p>
+		<p><a href="http://flickr.com"><span class="flick">Flick</span><span class="r">r</span></a> logo and all photos are property of their respective owners.</p>
+		<a onClick="javascript: void(window.open('http://www.plurk.com/?qualifier=shares&amp;status=' .concat(encodeURIComponent(location.href)) .concat(' ') .concat('&#40;') .concat(encodeURIComponent(document.title)) .concat('&#41;')));" style="cursor: pointer;"><span class="p">Plurk Share</span></a>
+		&nbsp;|&nbsp;<a href="http://twitter.com/share" class="twitter-share-button" data-text="Flickr Instant Search!" data-count="horizontal" data-via="tomin" data-related="flickr:Awesome photo service!">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>		
+	</div>
+</div>
+<script type="text/javascript" src="instant.js"></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18590649-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'http://www.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>PTT Search</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<style type="text/css">
+body{
+margin:0.5em;
+}
+#feedurl{
+width: 150px;
+}
+#keyword{
+width: 100px;
+}
+#container{
+margin: 0 auto;
+padding: 0;
+width: 800px;
+}
+.center{
+text-align: center;
+}
+.collapsed{
+margin-left: 0em !important;
+background: #F3F5FC;
+}
+.entry-container{
+display:none;
+}
+img{
+border:0;
+max-height: 480px;
+max-width: 640px;
+overflow: hidden;
+}
+.entry-date{
+float:right;
+}
+.source, .play, .download{
+float: right;
+margin-right: 0.5em;
+}
+.link-out{
+color:#666;
+}
+.feed-title{
+margin: 0;
+color: #000000;
+display: inline;
+position: static;
+width: auto;
+font-size: 100%;
+font-weight: bold;
+margin-right: 0.5em;
+display: inline;
+}
+#userdata{
+float: left;
+}
+#maxFeed{
+width: 45px;
+}
+.found{
+color:red;
+font-weight: strong;
+}
+#sound{
+clear:both;
+text-align: center;
+}
+</style>
+</head>
+<body>
+    <div id="container">
+        <div id="query">          
+			<form name="f" method="post" action="">
+			Keyword(Optional): <input id="keyword" name="keyword" type="text" value="" />            
+			Board:
+			<select name="board" id="board">
+				<option>Actuary</option>
+				<option>Ajax</option>
+				<option>Aquarium</option>
+				<option>ask</option>
+				<option>BabyMother</option>
+				<option>Beauty</option>
+				<option>BeautyBody</option>
+				<option>BeautySalon</option>
+				<option>BigBanciao</option>
+				<option>biker</option>
+				<option>BLEACH</option>
+				<option>Brit-pop</option>
+				<option>BuyTogether</option>
+
+				<option>C_Chat</option>
+				<option>car</option>
+				<option>cat</option>
+				<option>CFantasy</option>
+				<option>Chiayi</option>
+				<option>ChungLi</option>
+				<option>ComeHere</option>
+				<option>cookclub</option>
+				<option>creditcard</option>
+
+				<option>CVS</option>
+				<option>DC</option>
+				<option>DIABLO</option>
+				<option>DSLR</option>
+				<option>EatToDie</option>
+				<option>Elephants</option>
+				<option>ELSWORD</option>
+				<option>e-shopping</option>
+				<option>Examination</option>
+				<option>EZsoft</option>
+				<option>Facebook</option>
+				<option>FITNESS</option>
+				<option>Food</option>
+				<option>GetMarry</option>
+				<option>Gossiping</option>
+				<option>graduate</option>
+				<option>hairdo</option>
+				<option>HardwareSale</option>
+				<option>Headphone</option>
+
+				<option>HelpBuy</option>
+				<option>home-sale</option>
+				<option>HomeTeach</option>
+				<option>Hsinchu</option>
+				<option>Huaoptionen</option>
+				<option>iPhone</option>
+				<option>iPod</option>
+				<option>Japan_Travel</option>
+				<option>Japandrama</option>
+
+				<option>job</option>
+				<option>joke</option>
+				<option>Kaohsiung</option>
+				<option>KoreaDrama</option>
+				<option>Lakers</option>
+				<option>Lifeismoney</option>
+				<option>Lions</option>
+				<option>Little-Games</option>
+				<option>LoL</option>
+				<option>lyrics</option>
+				<option>Mabinogi</option>
+				<option>MakeUp</option>
+				<option>MapleStory</option>
+				<option>marvel</option>
+				<option>Mioptiontaryoptionfe</option>
+				<option>Mix_Match</option>
+				<option>MJ</option>
+				<option>MLB</option>
+				<option>MobileComm</option>
+				<option>mobilesales</option>
+				<option>movie</option>
+				<option>NARUTO</option>
+				<option>NBA</option>
+				<option>NBA_Film</option>
+				<option>nb-shopping</option>
+				<option>NTU</option>
+				<option>NTUcourse</option>
+				<option>NY-Yankees</option>
+				<option>ONE_PIECE</option>
+				<option>Option</option>
+				<option>part-time</option>
+				<option>PC_Shopping</option>
+				<option>PlayStation</option>
+				<option>PokeMon</option>
+				<option>RO</option>
+				<option>Salary</option>
+				<option>Scorpio</option>
+				<option>SD-GundamOL</option>
+				<option>SET</option>
+				<option>ShuangHe</option>
+				<option>SMSoptionfe</option>
+				<option>SNSD</option>
+				<option>Soft_Job</option>
+				<option>Songs</option>
+				
+				<option>SportLottery</option>
+				<option>StarCraft</option>
+				<option>stationery</option>
+				<option>Stock</option>
+				<option>studyabroad</option>
+				<option>StupidClown</option>
+				<option>SuperJunior</option>
+				<option>TaichungBun</option>
+				<option>Tainan</option>
+				<option>TaiwanDrama</option>
+				<option>Tech_Job</option>
+				<option>TKU_Talk</option>
+
+				<option>TY_Research</option>
+				<option>Wanted</option>
+				<option>WarCraft</option>
+				<option>Web_Design</option>
+				<option>WOW</option>
+				<option>Zastrology</option>
+			</select>
+			Feedurl: <input id="feedurl" type="text" value="http://rss.ptt.cc/" /> 			
+			<input id="loaduserdata" type="submit" value="Get" />
+            Max:<input id="maxFeed" type="text" value="20" />
+			</form>
+        </div>
+		
+		<div id="result">
+			<table id="userdata" border="1" width="100%">
+				<thead>
+					<th>
+						Results <a id="itemsToggle" href="">(Toggle All Items)</span>
+					</th>					
+				</thead>
+				<tbody>
+				</tbody>
+			</table>			
+		</div>
+    </div>
+	<div id="sound"></div>
+	<!--
+	<embed src="http://mail.google.com/mail/html/audio.swf?audioUrl=http://translate.google.com/translate_tts?q=Friends%2C+Romans%2C+countrymen%2C+lend+me+your+ears%3B+I+come+to+bury+Caesar%2C+not+to+praise+him.+&tl=en"></embed>
+	-->
+	<p style="clear:both">&nbsp;</p>
+	
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script type="text/javascript" src="modernizr-1.5.min.js"></script>
+<script type="text/javascript">
+/*
+ * tomin@May, 2011
+ *
+ * Todo: external RSS anchor
+ * 
+ */
+var link_index = 0, global_title, global_content;
+var soundN = 0;
+var soundContentN = 0;
+
+$.YQL = function(query, callback) { 
+    if (!query || !callback) {
+        throw new Error('$.YQL(): Parameters may be undefined');
+    }
+ 
+    var encodedQuery = encodeURIComponent(query),
+    url = 'http://query.yahooapis.com/v1/public/yql?q='
+         + encodedQuery + '&format=json&callback=';
+	//$("body").prepend(url);
+	$.getJSON(url, callback);			
+};
+
+/*
+ * jGFeed 1.0 - Google Feed API abstraction plugin for jQuery
+ *
+ * Licensed under the GPL license:
+ *   http://www.gnu.org/licenses/gpl.html
+ *
+ */
+$.jGFeed = function(url, fnk, num, key) { 
+  if(url == null) return false;
+  
+  var gurl = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q="+url;
+  if(num != null) gurl += "&num="+num;
+  if(key != null) gurl += "&key="+key;
+  
+  $.getJSON(gurl, function(data){
+	if(!data.responseData){
+		alert("System Busy or unable to fetch data");//系統忙線中，請稍候再試！或是該看版暫不開放資料外連。
+		return false;
+	}
+	
+	if(typeof fnk == 'function' && data.responseData.feed!=null)
+	  fnk.call(this, data.responseData.feed);
+	else
+	  return false;
+  });
+
+};
+
+function parseJG(){
+	var maxFeed = $('#maxFeed').val().match(/\d+/);
+	if(!maxFeed) maxFeed = 100;	
+	var keyword = $("#keyword").val();
+	var keywordlength = keyword.replace(/^\s+|\s+$/g,"").length;		
+	var feedurl = $('#feedurl').val();
+	var tblRow = "";	
+	
+	$.jGFeed(feedurl +'?time='+new Date(),function(feeds){	  
+		if(!feeds){		
+			// there was an error
+			return false;
+		}  
+		link_index = 0;
+		soundN = 0;
+		for(var i=0,length=feeds.entries.length; i<length; i++){
+			var entry = feeds.entries[i];
+			var year = entry.publishedDate.substr(12,4);
+			var month = entry.publishedDate.substr(8,3);
+			var date = entry.publishedDate.substr(5,2);
+			var _time = month + " " + date + ", " + year;
+			var _href = entry.link;
+			var _content = entry.contentSnippet;
+			var _title = entry.title;		
+
+			tblRow += targetHTML(_href, _content, _title, _time);
+		}
+		
+		$("#userdata tbody").html(tblRow);
+		last();		
+	}, maxFeed);
+		
+}
+function outputSound(word){
+	var sound = getTTS() + word;	
+	var output= "<audio src='" + sound + "' controls autoplay rel='noreferrer'></audio>";
+	
+	if (!Modernizr.audio || !Modernizr.audio.mp3){	
+		sound = "http://mail.google.com/mail/html/audio.swf?autoplay=1&audioUrl=" + getTTS() + word + "&tl=zh";
+		output = "<object><embed src='" + sound + "' width='200' height='80'></embed></object>";	
+	}
+	
+	$("#sound").html(output);	
+}
+function getTTS(){	 
+	return "http://translate.google.com/translate_tts?q=";
+}
+function loadSound(id){	
+	if(id != null){ 
+		soundN = id-1;
+		$("#index_"+id).next().show();		
+	}
+	var title = $( $(".link-title")[soundN] ).html();
+		
+	if (Modernizr.audio && Modernizr.audio.mp3){				
+		outputSound(title);
+		$("audio").bind("ended", function() {
+			if(id!=null) loadContent(id);
+			else loadContent();
+		});
+	}else{
+		outputSound(title);
+		/*
+		var sound = getTTS() + title + $( $(".entry-container")[soundN] ).html().replace(/<[^>]+>/g,"");
+		var output = "Either your browser does not support HTML5 Audio or your browser doesn't support playing MP3s, <br />";
+		output += "so you must use the download link: <a href='" + sound + "'>" + title + "</a> <br /> ";		
+		*/		
+		var SOUND_LENGTH = 7000;
+		clearGlobal();
+		if(id!=null) global_content = setTimeout("loadContent("+ id + ")", SOUND_LENGTH );
+		else global_content = setTimeout("loadContent()", SOUND_LENGTH );
+	}	
+	
+}
+function clearGlobal(){
+	if(global_title!=null) clearTimeout(global_title);
+	if(global_content!=null) clearTimeout(global_content);	
+}
+function loadContent(id){
+	var GOOGLE_LIMIT = 100;
+	if(id!=null) soundN = id-1;	
+	var content = $( $(".entry-container")[soundN] ).html();
+	var cl = 0;
+	if(content!=null){
+		content = content.replace(/<[^>]+>/g,"");		
+	    cl = content.length;
+	}
+	
+	if( cl == 0){//no content;
+		soundN++;
+		loadSound();	
+		return;
+	}
+	if( cl > GOOGLE_LIMIT){	
+		if(soundContentN < Math.ceil( cl/GOOGLE_LIMIT) ){
+			content = content.substr(GOOGLE_LIMIT*soundContentN, GOOGLE_LIMIT);
+			outputSound(content);
+			soundContentN++;
+			
+			if (Modernizr.audio && Modernizr.audio.mp3){
+				$("audio").bind("ended", function() {
+					if(id!=null) loadContent(id);
+					else loadContent();
+					return;				
+				});
+			}else{
+				var SOUND_LENGTH = 20000;
+				clearGlobal();
+				if(id!=null) global_content = setTimeout("loadContent("+ id + ")", SOUND_LENGTH );
+				else global_content = setTimeout("loadContent()", SOUND_LENGTH );			
+			}
+		}else{
+			soundContentN = 0;
+		}
+	}else{
+		outputSound(content);
+	}
+	if(id!=null) return;
+	
+	$("audio").bind("ended", function() {
+		if( soundN <= $('#maxFeed').val() ){
+			soundN++;
+			loadSound();
+			return;
+		}
+	});
+	if (!Modernizr.audio || !Modernizr.audio.mp3){
+		if( soundN <= $('#maxFeed').val() ){
+			soundN++;
+			var SOUND_LENGTH = 20000;
+			clearGlobal();
+			global_title = setTimeout("loadSound()", SOUND_LENGTH );	
+		}
+	}
+	
+	
+}
+function markKeyword(){
+	var keyword = $("#keyword").val();
+	var keywordlength = keyword.replace(/^\s+|\s+$/g,"").length;		
+	
+	if (keywordlength != 0 ){	
+		$(".link-title, .entry-container").each(function(){
+			var target = $(this).html();
+			if(target.match(keyword))
+				$(this).html( target.replace(new RegExp(keyword,'g'),"<span class=found>" + keyword + "</span>"));
+		});		
+	}		
+}
+function parserURL(_content){
+	if(!_content.match(/href=/g)){//non html
+		_content = _content.replace(/\bhttps?:[\w\.\/%\?\&\=;\-~@\,]+\b/g,"<a href='$&' target='_blank'>$&</a>");
+		_content = _content.replace(/<a href=[^>]+\/\/(\w+\.youtube\.[^\/]+)\/watch\?[^>]*v=([^>"&\']+)[^>]+>[^<]+<\/a>/g, '<object width="640" height="400"><param name="movie" value="http://$1/v/$2&hl=en&fs=1"></param><param name="allowFullScreen" value="true"></param><embed src="http://$1/v/$2&hl=en&fs=1" type="application/x-shockwave-flash" allowfullscreen="true" width="640" height="390"></embed></object>');
+		_content = _content.replace(/<a href=[^>]+\/\/(youtu\.be)\/([^>"&\']+)[^>]+>[^<]+<\/a>/g, '<iframe width="640" height="400" src="http://www.youtube.com/embed/$2" frameborder="0" allowfullscreen></iframe>');
+		_content = _content.replace(/<a href=[^>]+\/\/(vimeo\.com)\/([^>"&\']+)[^>]+>[^<]+<\/a>/g, '<iframe src="http://player.vimeo.com/video/$2?title=0&amp;byline=0&amp;portrait=0" width="640" height="400" frameborder="0"></iframe>');
+		_content = _content.replace(/<a href=[^>]+\/\/([^>"&\']+)\.(jpg|png|jpeg|gif){1}[^>]+>[^<]+<\/a>/g, 'http://$1.$2 <br/><img src="http://$1.$2" />');
+		_content = _content.replace(/<a href=[^>]+\/\/(mymedia\.yam\.[^\/]+)\/\w{1}\/([^>"&\']+)[^>]+>[^<]+<\/a>/g, '$&<br/><object width="450" height="120"><param name="movie" value="http://mymedia.yam.com/*/$2"></param><param name="quality" value="high"></param><param name="wmode" value="transparent"></param><embed src="http://mymedia.yam.com/*/$2" quality="high" type="application/x-shockwave-flash" wmode="transparent" width="450" height="120"></embed></object>');
+		_content = _content.replace(/<a href=[^>]+\/\/(\w+\.xiami\.[^\/]+)\/\w+\/([^>"&\']+)[^>]+>[^<]+<\/a>/g, '$&<br/><embed src="http://www.xiami.com/widget/0_$2/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent"></embed>');		
+	}
+	return _content;
+}
+function targetHTML(_href, _content, _title, _time){	
+	var keyword = $("#keyword").val();
+	var keywordlength = keyword.replace(/^\s+|\s+$/g,"").length;
+	var html = "";
+	var key = _href.replace(/.+(\d{9,}).+/,"$1");//unique time
+	var board = $("#board").val();
+	var anchor = board + "," + key;
+	
+	if (keywordlength == 0 || (keywordlength != 0 && ( _title.match(new RegExp(keyword))!=null  || _content.match(new RegExp(keyword))!=null )) ){	
+		_content = parserURL(_content);
+		link_index++;
+		html = 	"<tr><td><a id='a" + key + "' name='" + anchor + "'></a><div class='entry'>" +
+				"<div class='collapsed' id='index_" + link_index + "'>" +
+					"<div class='feed-title'>" + link_index + ' : ' +
+						"<a class='link-title' href='#" + anchor + "'>" + _title + "</a>"  +	
+					 "</div>" + 					 
+					 "<div class='source'>&nbsp;<a class='link-out' target='_blank' href='" + _href + "'>[link]</a></div>"  +
+					 "<div class='download'>&nbsp;<a class='link-download' href='" + getTTS() +  _title  + _content.replace(/<[^>]+>/g,"") + "'>[save]</a></div>"  +
+					 "<div class='play'>&nbsp;<a class='link-play' href='' rel='" + link_index +"'>[play]</a></div>"  +
+					 "<div class='entry-date'>" + _time + "</div>" +					 
+				 "</div>" +
+				 "<div class='entry-container'>" + _content + "</div>" +
+				 "</div></td></tr>";
+	}	
+	return html;
+}
+function clearKeyword(){
+	var tbody = $("#userdata tbody");
+	var tbodyhtml = tbody.html().replace(/\<\/?span( class=\"?(found)?\"?)?\>/g,"");
+	tbody.html(tbodyhtml);
+}
+function keywordFilter(){
+	var keyword = $("#keyword").val();
+	var keywordlength = keyword.replace(/^\s+|\s+$/g,"").length;
+	
+	if (keywordlength !=0 ){
+		$(".trfound, .found").removeClass();
+		$("tr").show();	
+		clearKeyword();
+			
+		$(".link-title, .entry-container").each(function(){
+			if($(this).text().match(keyword))
+				$(this).parents("tr").addClass("trfound");
+		});		
+		
+		$("tr").hide();
+		$(".trfound").show();
+		markKeyword();
+	}else{
+		clearKeyword();
+		$('tr').show();
+		//$('form').submit();
+	}
+}
+
+function parseYQL(){
+	if ($.browser.msie || $.browser.webkit || $.browser.opera){ 
+		parseJG();
+		return;
+	}
+
+	var maxFeed = $('#maxFeed').val().match(/\d+/);
+	if(!maxFeed) maxFeed = 100;	
+	var feedurl = $('#feedurl').val();
+	var baseGoogleFeedURL = "http://www.google.com/reader/api/0/stream/contents/feed/";		
+	var YQLURL = "select * from json where url='" + baseGoogleFeedURL + feedurl + "?n=" + maxFeed + "'";		
+	var tblRow = "";
+	var keyword = $("#keyword").val();
+	//if(keyword.length>0) YQLURL = YQLURL + " and YQLURL";		
+						
+	$.YQL(YQLURL, function(data) {
+	
+		if(data.query.results==null){//no cache on google reader
+			parseJG();
+			return;
+		}
+
+		link_index = 0;
+		soundN = 0;
+		$.each(data.query.results.json.items, function (i, n) {
+			var _time = new Date();
+			_time.setTime(n.crawlTimeMsec);
+			_time = _time.toLocaleDateString();
+			var _href;
+			var _content;
+			var _title;
+			if (typeof n.alternate != 'undefined') { _href = n.alternate.href; } else { _href = ""; }						
+			if (typeof n.title != 'undefined') { _title = n.title; } else { _title = ""; }
+			if (typeof n.content != 'undefined') { _content = n.content.content; }
+			else if (typeof n.summary != 'undefined') { _content = n.summary.content; } 
+			else { _content = ""; }
+
+			tblRow += targetHTML(_href, _content, _title, _time);			
+		});
+						
+		$("#userdata tbody").html(tblRow);
+		last();
+	});
+}
+
+function init(){
+	//file: .+\.html     index: .+foldername\/
+	var parameters = location.href.replace(/.+\.html/g,"").replace(/#/g,"").split(",");
+	var board = parameters[0];
+
+	if(board.length>0){
+		$("#board").val(board);		
+	}else{
+		$("#board").val("joke");
+	}
+	var PTTRSS = "http://rss.ptt.cc/";
+	$("#feedurl").val( PTTRSS + $('#board').val() + ".xml");
+	$("form").submit();
+	
+	soundN = 0;
+	soundContentN = 0;	
+}
+
+function last(){
+	if(link_index==0){
+		alert("No data");//查無資料
+		return;
+	}
+	var parameters = location.href.replace(/.+\.html/g,"").replace(/#/g,"").split(",");
+	var key = parameters[1];
+
+	if(key!=null && key.length>0){
+		location.href = location.href;
+	}
+	markKeyword();		
+	$("#a"+key).parent().find(".entry-container").show();
+	loadSound();
+}
+$(function () {
+	$('form').submit(function () {				
+		$("#userdata tbody").html("<tr><td class=center>Now loading...</td></tr>");		
+		parseYQL();
+		return false;
+	});
+	$('#board').change(function () {				
+		var PTTRSS = "http://rss.ptt.cc/";
+		$("#feedurl").val( PTTRSS + $('#board').val() + ".xml");
+		location.href = location.href.replace(/#.+/g,"") + "#" + $("#board").val();
+		$('form').submit();
+	});
+	$('.link-title').live("click",function () {
+		$(this).parents(".collapsed").next().toggle();
+	});
+	$('.link-play').live("click", function () {
+		loadSound( $(this).attr("rel"));
+		return false;
+	});	
+	$("#keyword").focus();
+	$("#keyword").keyup(function(){
+		setTimeout(keywordFilter,100);
+	});		
+	$("#itemsToggle").click(function () {				
+		$(".entry-container").toggle();
+		return false;
+	});
+	init();
+});
+</script>
+
+</body>
+</html>

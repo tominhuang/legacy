@@ -1,0 +1,85 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Dict</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+Query word:
+<form>
+	<input type="input" name="word" value="dog">
+	<input type="submit" value="查英英">
+	<input type="button" class="lang" value="查英中" rel="zh-tw">
+	<input type="button" class="lang" value="查韓文" rel="ko">
+	<input type="button" class="lang" value="查法文" rel="fr">
+	<input type="button" class="lang" value="查德文" rel="de">
+	<input type="button" class="lang" value="查俄文" rel="ru">
+	<input type="button" class="lang" value="查西班牙文" rel="es">
+	<input type="button" class="lang" value="查葡萄牙文" rel="pt">
+	<input type="button" class="lang" value="查義大利文" rel="it">
+	<input type="button" class="lang" value="查捷克文" rel="cs">
+</form>
+<div id="result"></div>
+
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load("jquery", "1");</script>
+<script type="text/javascript">
+$("[name=word]").focus();
+$("form").submit(function(){
+	do_jsonp($("[name=word]").val(), "en");
+	$("[name=word]").focus();
+	return false;
+});
+$(".lang").click(function(){
+	do_jsonp($("[name=word]").val(), $(this).attr("rel"));
+	$("[name=word]").focus();
+});
+
+function do_jsonp(word,lang) {
+	var addr="http://www.google.com/dictionary/json?callback=?&client=te&sl=en&tl=" + lang + "&q=" + word;
+
+    $.getJSON(addr, function(data) {	
+	
+		var getWord=data.primaries;
+		if(getWord==null){
+			$('#result').html("查無此字");
+			return;
+		}
+		var entries=getWord[0].entries;
+		var result="";
+		var iterator=1;
+		
+		if(lang=="en"){
+			$.each(entries, function(i,item){
+				if(entries[i].terms==null)return;//See also
+				if(entries[i].type!="meaning")return;//type related,i=0
+				var text=entries[i].terms[0].text;
+
+	            result += iterator + ": " + text + "<br><br>";
+				iterator++;
+	        });
+		}else{
+			entries=entries[0].entries;			
+		
+			$.each(entries, function(i,item){
+				if(entries[i].terms==null)return;//See also
+				if(entries[i].type!="meaning")return;//type related,i=0
+				var second=entries[i].terms[1];
+				var text=entries[i].terms[0].text;
+				if(second!=null) text+="  " + second.text;//英,韓,法 +  (中,..)
+
+	            result += iterator + ": " + text + "<br><br>";
+				iterator++;
+	        });		
+		
+		}
+        $('#result').html(result);
+    });
+}
+
+do_jsonp("dog","en");
+</script>
+
+</body>
+</html>

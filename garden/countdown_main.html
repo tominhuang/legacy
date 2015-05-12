@@ -1,0 +1,16 @@
+
+
+本視窗還有<span id="countdown"></span>秒即將關閉！
+
+<script>
+var timer=10;
+function countdown(){	
+	document.getElementById("countdown").innerHTML=timer;
+	if(timer==0){
+		window.close();
+	}
+	timer--;
+}
+countdown();
+setInterval(countdown,1000);
+</script>

@@ -1,0 +1,31 @@
+#wrapper #main #left #frame{
+	float: left;
+	width: 100%;
+	height: 700px;
+	background-image: url(../images/back.jpg);
+	background-repeat: no-repeat;
+    background-position: center;
+	margin-left: 42px;
+}
+#wrapper #main #left #frame #frame_top{
+	text-align: center;
+	margin-bottom: 90px;
+}
+#wrapper #main #left #frame #frame_bottom_left{
+	float: left;
+	width: 300px;
+	padding-left: 30px;
+}
+#wrapper #main #left #frame #frame_bottom_right{
+	float: left;
+	width: 200px;
+	margin-left: 104px;
+}
+#wrapper #main #left .news_unit{	
+	color: #222;
+	font-size: 12px;
+	margin-bottom: 12px;
+}
+#wrapper #main #left .news_time{
+	font-weight: bold;
+}

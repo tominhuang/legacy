@@ -1,0 +1,166 @@
+<%@ page contentType="text/html; charset=ms950" %>
+<%@ include file="include/mysql.jsp" %>
+<%@ include file="include/head.jsp" %>
+<%@ include file="check/session/count.jsp" %>
+<%@ include file="check/session/count_book.jsp" %>
+
+<%--查詢符合資料--%>
+<sql:query var="bookinfo">
+	SELECT * FROM bookinfo where ISBN = '${param.isbn}'
+</sql:query>
+<sql:query sql="SELECT * FROM comment where ISBN = '${param.isbn}' order by time desc" var="comment" />
+<sql:query sql="SELECT * FROM tag where ISBN = '${param.isbn}'" var="tag" />
+<sql:query sql="SELECT DISTINCT() FROM record_book where ISBN = '${param.isbn}' order by count_date desc" var="record_book" />
+<sql:query sql="SELECT sum(tcount) FROM tag where ISBN = '${param.isbn}'" var="sum" />
+	<c:forEach items="${sum.rowsByIndex}" var="sum_put">
+		<c:set value="${sum_put[0]}" var="sumup" />
+	</c:forEach>
+
+
+<c:choose>
+	<c:when test="${bookinfo.rowCount=='0'}">
+		查無資料
+	</c:when>
+
+	<c:otherwise>
+		<p>詳細資料</p>
+		
+<table border="1" cellspacing="0">
+  <tr bgcolor="#CCCC99"> 
+    <%--Title--%>
+    <th>圖片</th></th></th>
+    <th>書名</th>
+    <th>作者</th>
+    <th>出版社</th>
+    <th>出版日期</th>
+    <th>ISBN</th>
+    <th>類別</th>
+    <th>語言</th>
+  </tr>
+  <c:forEach items="${bookinfo.rowsByIndex}" var="row"> 
+  <tr> 
+    <td><img src="images/${row[4]}.jpg"></td>
+    <c:forEach begin="0" end="6" var="item"> 
+    <td>${row[item]}</td>
+    </c:forEach> </tr>
+  <tr> 
+    <td colspan="8"> <c:set var="filedir" value="file/${row[4]}/summary.jsp" /> 
+      <jsp:include page="${filedir}" /> <br> <br> <br> </td>
+  </tr>
+  <tr> 
+    <td colspan="8" align="center"> <br> <a href="read/read.jsp?isbn=${row[4]}">開始閱讀電子書</a> 
+      <br> <br> </td>
+  </tr>
+  <tr> 
+    <td colspan="8" align="center">標籤<br><br>
+
+	<c:choose>
+		<c:when test="${tag.rowCount=='0'}">
+			無		
+		</c:when>
+	
+		<c:otherwise>
+
+			<c:forEach items="${tag.rowsByIndex}" var="tag_put">
+				<a href="search.jsp?textfield=${tag_put[1]}">		
+				<c:choose>
+					<c:when test="${tag_put[2]>0.4*sumup}">
+						<font size="10">
+					</c:when>
+					
+					<c:when test="${tag_put[2]>0.3*sumup}">
+						<font size="8">
+					</c:when>
+
+					<c:when test="${tag_put[2]>0.2*sumup}">
+						<font size="6">
+					</c:when>
+					
+					<c:when test="${tag_put[2]>0.1*sumup}">
+						<font size="4">
+					</c:when>
+					
+					<c:otherwise>
+						<font size="2">
+					</c:otherwise>
+				</c:choose>
+     		   ${tag_put[1]}</font></a>　
+			</c:forEach>
+		</c:otherwise>
+	</c:choose>	
+
+<c:if test="${sessionScope.id!=null}">
+	<form name="form" method="post" action="tag_deal.jsp?isbn=${param.isbn}">
+          <input name="textfield" type="text" size="14"><br>
+        <select name="select2">
+          <option value="10">相關性極大</option>
+          <option value="8">相關性大</option>
+          <option value="6" selected>相關性普通</option>
+          <option value="4">相關性小</option>
+          <option value="2">相關性極小</option>
+        </select>
+        <input type="submit" name="Submit" value="貼標籤">
+	  </form>
+</c:if>		
+
+	 </td>
+  </tr>
+  <tr>
+    <td colspan="8"><p align="center">相關評論</p>
+	<c:choose>
+		<c:when test="${comment.rowCount=='0'}">
+			<p align="center">無</p>
+		</c:when>
+	
+		<c:otherwise>
+			<c:forEach items="${comment.rowsByIndex}" var="comment_put">
+			
+			<img src="comment/star/${comment_put[4]}.gif"> <a href="blog/blog.jsp?id=${comment_put[1]}">${comment_put[1]}</a>　在　${comment_put[2]}　說：			
+			<c:if test="${sessionScope.id==comment_put[1]}">
+				<a href="detail_del.jsp?isbn=${comment_put[0]}">刪除此篇評論！！</a>
+			</c:if>
+			<br>
+			<pre>${comment_put[3]}</pre>
+			</c:forEach>
+		</c:otherwise>
+	</c:choose>	
+	</td>
+  </tr>
+  </c:forEach> 
+</table>			
+	</c:otherwise>
+</c:choose>
+
+<c:if test="${sessionScope.id!=null}">
+	<form name="form1" method="post" action="detail_deal.jsp?isbn=${param.isbn}">	  
+  <p> 
+    <textarea name="textarea" cols="80" rows="5"></textarea>
+  </p>
+  <p align="center">
+    <select name="select">
+      <option value="1">一顆星</option>
+      <option value="2">二顆星</option>
+      <option value="3" selected>三顆星</option>
+      <option value="4">四顆星</option>
+      <option value="5">五顆星</option>
+    </select>
+    <input type="submit" name="Submit" value="送出評論">
+  </p>
+	  </form>
+</c:if>
+<hr>
+
+<div algin="center">
+<c:choose>
+	<c:when test="${record_book.rowCount=='0'}">
+		<p align="center">查無資料</p>
+	</c:when>
+
+	<c:otherwise>
+		最近瀏覽此書籍的人有：<br>
+		<c:forEach items="${record_book.rowsByIndex}" var="record_book_put">
+			<a href="blog/blog.jsp?id=${record_book_put[0]}">${record_book_put[0]}</a><br>
+		</c:forEach>
+	</c:otherwise>
+</c:choose>	
+</div>

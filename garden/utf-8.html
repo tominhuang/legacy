@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="author" content="tomin">
+    <title>Unicode & Languages Transform</title>
+	
+    <script type="text/javascript">	
+	
+	var ex1 = "批踢踢";
+	var ex2 = "%E5%9B%A7";
+	var ex3 = "本程式採用創用CC－姓名標示─非商業性─相同方式分享 2.5 台灣。\nhttp://creativecommons.org/licenses/by-nc-sa/2.5/tw/\ntomin 2008.11.08";
+		
+	/* input Languages */
+	function doCheck() {
+		var ta = document.getElementById("ta").value;
+		ta = encodeURI(ta);
+		ta = ta.replace(/%0A/g, "\n" );
+				
+		document.getElementById("translation").innerHTML = "萬國碼 Unicode (UTF-8)：";
+		document.getElementById("ta2").value = ta;
+		document.getElementById("ta2").style.display= "block";
+		return false;
+	}
+	
+	/* input Utf-8 */
+	function doCheck2() {
+		var ta = document.getElementById("ta").value;
+		ta = decodeURI(ta);
+
+		document.getElementById("translation").innerHTML = "語言原型 (本來的文字)：";
+		document.getElementById("ta2").value = ta;
+		document.getElementById("ta2").style.display= "block";
+		return false;
+	}	
+	
+	function loadex1(){
+		document.getElementById("ta").value = ex1;
+		doCheck();
+	}
+
+	function loadex2(){
+		document.getElementById("ta").value = ex2;
+		doCheck2();
+	}
+
+	function loadex3(){
+		document.getElementById("ta").value = ex3;
+		document.getElementById("translation").innerHTML = "";
+		document.getElementById("ta2").style.display= "none";
+	}
+		
+	function setfocus(){
+	        document.form1.textarea.focus();
+	        return;
+	}	
+	
+    </script>
+	
+	<style>
+	#translation{
+		float: left;
+		font-size: 16px;
+	}
+
+	#ex{
+		position: absolute;
+		font-size: 14px;
+		top: 17px;
+		left: 870px;
+		float: left;
+	}
+	
+	#ta{
+		color: green;	
+	}
+	
+	#ta2{
+		color: blue;
+		display: none;
+	}	
+	
+	</style>
+  </head>
+
+  <body onload="setfocus()">
+  <form name="form1" id="form1" method="post" action="">
+    <p>
+      <textarea name="textarea" cols="104" rows="8" id="ta">我是萬國碼 Unicode (UTF-8)轉換機。請在此輸入想轉換的 Unicode 或語言。</textarea>
+   
+    </p>	
+	<input type="button" name="Submit" value="轉變成萬國碼 Unicode (UTF-8)" onclick="doCheck();" />
+	<input type="button" name="Submit" value="還原成語言原型 (本來的文字)" onclick="doCheck2();" /><br /><br />
+	<span id="translation"></span>
+	<textarea name="textarea2" cols="104" rows="10" id="ta2"></textarea>
+  </form>
+  	<span id="ex">範例：<br /><a href="#" onclick="loadex1(); return false;">批踢踢</a><br />
+	<a href="#" onclick="loadex2(); return false;">%E5%9B%A7</a><br /><br />
+	<a href="#" onclick="loadex3(); return false;">關於本程式</a>
+	</span>
+    
+  </body>
+</html>

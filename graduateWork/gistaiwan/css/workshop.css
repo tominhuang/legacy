@@ -1,0 +1,36 @@
+.workshop:hover{
+cursor: pointer;
+color:#CD3333;
+}
+.workshop{
+padding:1px;
+padding-left:4px;
+padding-right:4px;
+margin-left: 2px;
+font-family: verdana;
+text-decoration:underline;
+}
+.hide{
+display:none;
+}
+#wrapper #main  .formline{
+margin-bottom: 12px;
+}
+.save:hover{
+border-style: inset;
+cursor: pointer;
+color:#CD3333;
+}
+.save{
+border: 1px gray outset;
+padding:2px;
+padding-left:4px;
+padding-right:4px;
+margin: 0 20% 0 0%;
+font-family: verdana;
+}
+.choice{
+}
+.result{
+font-weight:bold;
+}

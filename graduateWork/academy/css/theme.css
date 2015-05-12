@@ -1,0 +1,97 @@
+body {
+margin: 0;
+text-align: center;
+font-family:Arial;
+font-size: 12px;
+}
+a{color:#222;}
+a:hover{color:#666;text-decoration:none;}
+#wrapper{
+margin: auto;
+width: 972px;	/* 972/6=162 unit*/
+text-align: left;
+}
+input,select{
+color: #666;
+font-size:12px;
+font-family:Arial;
+border:1px #AAA solid;
+background: #fff;
+padding:0;
+}
+input[name='Submit']{
+width:40px;
+}
+.checkbox,.radiobutton {
+border: 0px;
+} 
+textarea{
+font-size: 12px;
+}
+#wrapper #top #banner{
+height: 300px;
+margin-bottom: 2px;
+background-image: url(../images/template.jpg);
+background-repeat:no-repeat;
+background-position:0px -26px;
+}
+.menu,.menuA,.menuC{
+height: 50px;
+width: 161px;
+background-image: url(../images/template.jpg);
+background-repeat:no-repeat;	
+}
+#menuA1{background-position:0px -346px;}
+#menuA1Active{background-position:0px -415px;}
+#menuA2{background-position:0px -467px;}
+#menuA3{background-position:0px -518px;}
+#menuA4{background-position:0px -570px;}
+#menuA5{background-position:0px -622px;}
+#menuB1{background-position:-162px -346px;}
+#menuB1:hover{background-position:-162px -415px;}
+#menuC1{background-position:-324px -346px;}
+#menuC1Active{background-position:-324px -415px;}
+#menuC2{background-position:-324px -468px;}
+#menuC3{background-position:-324px -522px;}
+#menuC4{background-position:-324px -576px;}
+#menuC5{background-position:-324px -630px;}
+#menuD1{background-position:-485px -346px;}
+#menuD1:hover{background-position:-485px -415px;}
+#menuE1{background-position:-646px -346px;}
+#menuE1:hover{background-position:-646px -415px;}
+#menuF1{background-position:-807px -346px;}
+#menuF1:hover{background-position:-646px -474px;}
+#wrapper #top #banner:hover,#wrapper #top #banner2:hover{
+cursor:pointer;
+}
+#wrapper #footer{
+float:left;
+height: 20px;
+width: 972px;
+font-size: 10px;
+margin-top: 24px;
+color: #888;
+}
+#wrapper #horizon{
+float:left;
+width: 972px;	
+border-bottom: 1px solid #888;
+}
+.ThemeGrayMenu, .ThemeGraySubMenuTable { 
+cursor : pointer; 
+cursor : pointer !important ; 
+} 
+.ThemeGraySubMenu { 
+position : absolute; 
+display : block; 
+visibility : hidden; 
+overflow : hidden; 
+z-index:1000;
+} 
+.ThemeGrayMenuItem, .ThemeGrayMenuItemHover, .ThemeGrayMenuItemActive { 
+cursor : pointer; 
+cursor : pointer !important ; 
+} 
+.ThemeGrayMenuFolderText, .ThemeGrayMenuItemText { 
+text-align : left; 
+} 

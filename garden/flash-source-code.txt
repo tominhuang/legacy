@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml">
+
+<mx:HTTPService id="sm" url="http://lyricwiki.org/api.php?fmt=xml" 
+	useProxy="false" method="get" result="{body.htmlText=sm.lastResult.LyricsResult.lyrics;wikiurl.htmlText=sm.lastResult.LyricsResult.url}">
+  <mx:request xmlns="">
+    <artist>{artist.text}</artist>
+    <song>{song.text}</song>
+  </mx:request>
+</mx:HTTPService>
+
+<mx:Panel width="483" height="460" title="ºû°òºqµü" fontSize="16">
+    <mx:Form defaultButton="{sendMessage}">
+      <mx:FormItem label="ºq¤â¦WºÙ¡G">
+         <mx:TextInput id="artist"/>
+      </mx:FormItem>
+      <mx:FormItem label="ºq¦±¦WºÙ¡G">
+         <mx:TextInput id="song"/>
+      </mx:FormItem>
+
+      <mx:FormItem>
+         <mx:Button id="sendMessage" label="¬d¸ßºqµü" click="{sm.send()}"/>
+      </mx:FormItem>
+    </mx:Form>
+    
+    <mx:TextArea id="body" editable="false" width="452" height="239"/>	
+    <mx:TextArea id="wikiurl" editable="false" width="452" height="25"/>
+</mx:Panel>
+
+
+<mx:LinkButton label="Source from: LyricWiki.org | Create by: tomin" click="navigateToURL(new URLRequest('http://lyricwiki.org'), '_self')"/>	
+
+</mx:Application>

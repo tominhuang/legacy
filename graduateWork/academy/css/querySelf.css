@@ -1,0 +1,14 @@
+body{
+margin:0;
+}
+.left{
+float:left;
+}
+.assistantInfo{
+position:absolute;
+left:340px;
+padding-left:4px;
+}
+.item{
+color:gray;
+}

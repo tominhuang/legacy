@@ -1,0 +1,13 @@
+#index_content{
+margin-left : 8px; 
+}
+.indexLeft{
+float:left;
+width:400px;
+}
+.indexRight{
+float:right;
+width:324px;
+}
+.marginLeftMin{
+}

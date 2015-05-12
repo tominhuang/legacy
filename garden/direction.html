@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:v="urn:schemas-microsoft-com:vml">
+  <head>
+    <title>Google Maps JavaScript API Example: Simple Directions</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <script src="http://maps.google.com/maps?file=api&v=2.x&key=ABQIAAAAzr2EBOXUKnm_jVnk0OJI7xSosDVG8KKPE1-m51RBrvYughuyMxQ-i1QfUnH94QxWIa6N4U6MouMmBA"
+      type="text/javascript"></script>
+    <script type="text/javascript"> 
+	// Create a directions object and register a map and DIV to hold the 
+    // resulting computed directions
+
+    var map;
+    var directionsPanel;
+    var directions;
+
+    function initialize() {
+      map = new GMap2(document.getElementById("map_canvas"));
+      //map.setCenter(new GLatLng(42.351505,-71.094455), 15);
+      directionsPanel = document.getElementById("route");
+      directions = new GDirections(map, directionsPanel);
+      //directions.load("from: 500 Memorial Drive, Cambridge, MA to: 4 Yawkey Way, Boston, MA 02215 (Fenway Park)");
+		//way 1, OK
+		var order=['(22.744737,120.317825)','(22.7268622,120.4071338)'];
+		//alert(order[0]);
+		var kk1 = "(22.744737,120.317825)";//()可省略。不可以多加雙引號""。
+		var kk2 = "(22.7268622,120.4071338)";
+		var llll = "from: " +order[0]+  " to:"+order[1];		
+		
+		//way 2, OK
+		var a1=22.744737;
+		var a2=120.317825;
+		var b1=22.7268622;
+		var b2=120.4071338;		
+		var llll2 = "from: (" + a1 + "," +  a2 + ") to: (" + b1 + "," + b2 + ")";//()可省略
+		
+		//way 3, OK
+		//數字轉字串，可轉可不轉
+			a1= '(' + a1+')';
+			a2= '(' + a2+')';
+			b1= '(' + b1+')';
+			b2= '(' + b2+')';		
+		var order3=[a1,a2,b1,b2];						
+		var llll3 = "from:" +order3[0] + "," +  order3[1] + " to:" + order3[2] + "," +  order3[3];		
+		//alert(llll3);
+				
+		//alert(order3[0]);//不能加.tostring
+		
+		directions.load(llll3);//llll,llll12,llll13皆可
+	  
+    }
+    </script>
+  </head>
+
+  <body onload="initialize()">
+    <div id="map_canvas" style="width: 70%; height: 480px; float:left; border: 1px solid black;"></div>
+    <div id="route" style="width: 25%; height:480px; float:right; border; 1px solid black;"></div>
+    <br/>
+  </body>
+</html>

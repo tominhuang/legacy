@@ -1,0 +1,54 @@
+a{color:#222222; }
+a:hover{color:#666666;text-decoration:none}
+body,input,select{
+	font-family:Arial;
+	font-size: 12px;
+}
+#wrapper #main #left #pin{
+	font-size: 18px;
+	margin-left: 52px;
+	margin-top: 42px;	
+}
+#wrapper #main #left .essay_header{
+	background-color: #222;
+	color: #fff;
+	border: 1px solid #666;
+	margin: 24px 0px 0px 52px;
+	padding: 1px 0px 1px 4px;
+}
+#wrapper #main #left .essay_content{	
+	border-left: 1px solid #666;
+	border-right: 1px solid #666;
+	border-bottom: 1px solid #666;
+	padding: 3px 0px 3px 4px;
+	margin: 0px 0px 0px 52px;	
+}
+#wrapper #main #left #pin_header{
+	color: #111;
+	background-color: #ddd;
+}
+#wrapper #main #left #sample, #wrapper #main #left #format{
+	color: #111;
+	background-color: #ddd;
+}
+#wrapper #main #left .essay_content_intro{
+	margin-bottom: 6px;
+}
+#wrapper #main #left #changeSubTopic{
+	margin: 0px 0px 2px 0px;
+	cursor: pointer;
+}
+#wrapper #main #left #formSubTopicChoice{
+	text-decoration: underline;
+}
+#wrapper #main #left #abstract_file, #wrapper #main #left #essay_file{
+	color: navy;
+}
+#wrapper #main #left #subtopic_button{
+	margin: 6px 0px 6px 6px;
+}
+.essay_words{
+	float: left;
+	width: 122px;
+	padding-top: 3px;
+}

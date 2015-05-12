@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>LyricWiki 維基歌詞－中文歌詞補完計畫</title>
+
+<script type="text/javascript">
+	var reqLyric;
+
+	function artistRequest() {
+		var artist = document.form1.artist.value;
+		var lyricWikiUrl = "http://lyricwiki.org/" + encodeURI(artist);
+		var wikiPediaUrl = "http://en.wikipedia.org/wiki/" + encodeURI(artist);
+		var wikiPediaUrlzh = "http://zh.wikipedia.org/wiki/" + encodeURI(artist);
+		
+		var word = "歌手名稱：" + artist + " " + encodeURI(artist) + "<br/><br/>";
+		word += "維基歌詞：<a href=\"" +  lyricWikiUrl + "\">" + lyricWikiUrl + "</a><br/>";
+		word += "英文維基百科：<a href=\"" +  wikiPediaUrl + "\">" + wikiPediaUrl + "</a><br/>";
+		word += "中文維基百科：<a href=\"" +  wikiPediaUrlzh + "\">" + wikiPediaUrlzh + "</a><br/>";
+			
+		document.getElementById("result").innerHTML = word ;
+	}
+
+	function albumRequest() {
+		var artist = document.form2.artist.value;
+		var album = document.form2.album.value;
+		var year = document.form2.year.value;
+		var lyricWikiUrl = "http://lyricwiki.org/" + encodeURI(artist) + ":" + encodeURI(album) + "_(" + year + ")";
+		var wikiPediaUrl = "http://en.wikipedia.org/wiki/" + encodeURI(artist);
+		var wikiPediaUrlzh = "http://zh.wikipedia.org/wiki/" + encodeURI(artist);
+		
+		var word = "歌手名稱：" + artist + " " + encodeURI(artist) + "<br/>";
+		word += "專輯名稱：" + album + "  " + encodeURI(album) + "<br/>";
+		word += "專輯年份：" + year + "<br/><br/>";
+		word += "維基歌詞：<a href=\"" +  lyricWikiUrl + "\">" + lyricWikiUrl + "</a><br/>";
+		word += "英文維基百科：<a href=\"" +  wikiPediaUrl + "\">" + wikiPediaUrl + "</a><br/>";
+		word += "中文維基百科：<a href=\"" +  wikiPediaUrlzh + "\">" + wikiPediaUrlzh + "</a><br/>";
+		document.getElementById("result2").innerHTML = word ;
+	}
+
+	function songRequest() {
+		var artist = document.form3.artist.value;
+		var song = document.form3.song.value;
+		var lyricWikiUrl = "http://lyricwiki.org/" + encodeURI(artist) + ":" + encodeURI(song);
+		var wikiPediaUrl = "http://en.wikipedia.org/wiki/" + encodeURI(artist);
+		var wikiPediaUrlzh = "http://zh.wikipedia.org/wiki/" + encodeURI(artist);	
+		
+		var word = "歌手名稱：" + artist + " " + encodeURI(artist) + "<br/>";
+		word += "歌曲名稱：" + song + "  " + encodeURI(song) + "<br/><br/>";
+		word += "維基歌詞：<a href=\"" +  lyricWikiUrl + "\">" + lyricWikiUrl + "</a><br/>";
+		word += "英文維基百科：<a href=\"" +  wikiPediaUrl + "\">" + wikiPediaUrl + "</a><br/>";
+		word += "中文維基百科：<a href=\"" +  wikiPediaUrlzh + "\">" + wikiPediaUrlzh + "</a><br/>";	
+		document.getElementById("result3").innerHTML = word ;
+	}
+</script>
+</head>
+
+<body>
+<h1>維基歌詞－中文歌詞補完計畫</h1>
+<h3>　本頁的主要目的是，幫助中文使用者，快速建立／尋找歌詞。（亦即產生正確編碼的網址:UTF-8 URL)</h3>
+<hr>
+<h2>◎建立／尋找歌手</h2>
+<table id="song" width="100%">
+	<tr>
+		<td width="30%" valign="top">
+		<form name="form1" method="get" action="" onsubmit="artistRequest();return false" >
+		  　．歌手名稱：
+		  <input type="text" name="artist"><br/>
+		  <p>　　　　　　　<input type="submit" name="Submit" value="填好了！" style="font-size:18px; "></p><br/>
+		</form>
+		<td>
+		<div id="result"></div>
+		</td>
+	</tr>
+</table>
+<hr>
+<h2>◎建立／尋找專輯</h2>
+<table id="album" width="100%">
+	<tr>
+		<td width="30%" valign="top">
+		<form name="form2" method="get" action="" onsubmit="albumRequest();return false" >
+		  　．歌手名稱：
+		  <input type="text" name="artist"><br/>
+		  　．專輯名稱：
+		  <input type="text" name="album"><br/> 
+		  　．專輯年份：
+		  <input type="text" name="year"><br/>
+		  <p>　　　　　　　<input type="submit" name="Submit" value="填好了！" style="font-size:18px; "></p><br/>
+		</form>
+		</td>
+		<td>
+		<div id="result2"></div>
+		</td>
+	</tr>
+</table>
+<hr>
+<h2>◎建立／尋找歌曲</h2>
+<table id="song" width="100%">
+	<tr>
+		<td width="30%" valign="top">
+		<form name="form3" method="get" action="" action="" onsubmit="songRequest();return false" >
+		  　．歌手名稱：
+		  <input type="text" name="artist"><br/>
+		  　．歌曲名稱：
+		  <input type="text" name="song"><br/>    
+		  <p>	  　　　　　　　<input type="submit" name="Submit" value="填好了！" style="font-size:18px; "></p><br/>		  
+		</form>
+		
+		</td>
+		<td>
+		<div id="result3"></div>
+		</td>
+	</tr>
+</table>
+<hr>
+<h3>◎相關連結</h3>
+　．<a href="http://lyricwiki.org">LyricWiki 維基歌詞官方網站</a><br/>
+　．<a href="main.html">LyricWiki 維基歌詞工具</a><br/><br/><br/>
+<hr>
+
+<div id="footer" align="right" style="color:#666666">
+Last Update: 2008/05/12<br/>
+Create by: tomin (<a href="http://lyricwiki.org/User_talk:Tomin">Talk</a>)<br/>
+</div>
+<br/><br/><br/><br/>
+
+
+</body>
+</html>

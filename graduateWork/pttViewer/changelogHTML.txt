@@ -1,0 +1,30 @@
+
+
+
+
+
+
+更方便地瀏覽PTT BBS網頁板。More convenient to browse Web PTT BBS
+<br/>
+<br/>
+預覽圖 Screenshots
+<br/>
+<a href="http://ppt.cc/J@qu"><img src="http://ppt.cc/J@qu@.jpg"></a>
+<br/><br/>
+<a href="http://ppt.cc/SWPp"><img src="http://ppt.cc/SWPp@.jpg"></a>
+<br/><br/>
+<br/>
+<hr>
+changelog:<br/>
+0.3<br/>
+support keyboard browsing (left and right arrow)<br/>
+hint for the last/first article<br/>
+deal deleted links with hiding and redirecting<br/>
+update url pattern<br/>
+<br/>
+0.2<br/>
+add version check button<br/>
+update url pattern<br/>
+<br/>
+0.1<br/>
+first version<br/>

@@ -1,0 +1,15 @@
+#wrapper #main #left .item{
+	float: left;
+	text-align: right;
+	width: 150px;
+	padding-right: 12px;
+}
+#wrapper #main #left #change{
+	padding-left:8px;
+	padding-right:8px;
+	margin-left: 162px;
+}
+#wrapper #main #left #result{
+	margin-left: 8px;
+	color: #666;
+}

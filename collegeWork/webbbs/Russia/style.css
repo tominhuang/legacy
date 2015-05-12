@@ -1,0 +1,24 @@
+body{
+	color:#cccccc;
+	font-size:12pt;
+	font-family:細明體;
+	background-color: Black;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+textarea,input,select{
+	color:#cccccc;
+	font-size:12pt;
+	font-family:細明體;
+	border-color:#666666;
+	border-right-color:#666666;	
+	border-bottom-color:#111111;
+	background-color: #000000;
+}
+table{
+	font-size:12pt;
+}
+A:link {color:#cccccc;text-decoration:none}
+A:active {color:Green;text-decoration:none}
+A:visited {color:#666666;text-decoration:none}
+A:hover {color:Yellow;text-decoration:none}

@@ -1,0 +1,87 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=Big5">
+<title>marquee</title>
+<style type="text/css">
+<!--
+	#myDiv {
+		overflow: hidden;
+		width: 100%;
+		background-color: red;
+	}
+	
+	#myDiv img {
+		border: 1px solid;
+		width: 80px;
+	}
+	
+	.word{
+		font-size: 10em;
+		font-family: 標楷體;
+	}
+-->
+</style>
+</head><body>
+<div id="myDiv">
+	<table>
+	<tbody><tr>
+		<td id="pic1">
+			<table>
+			<tbody><tr>
+				<td><span class="word">年</span></td>
+				<td><span class="word">新</span></td>
+				<td><span class="word">迎</span></td>
+				<td><span class="word">戶</span></td>
+				<td><span class="word">萬</span></td>
+				<td><span class="word">符</span></td>
+				<td><span class="word">桃</span></td>
+				
+				<td><span class="word">歲</span></td>
+				<td><span class="word">舊</span></td>
+				<td><span class="word">除</span></td>
+				<td><span class="word">聲</span></td>
+				<td><span class="word">一</span></td>
+				<td><span class="word">竹</span></td>
+				<td><span class="word">爆</span></td>				
+			</tr>
+			</tbody></table>
+		</td>
+		<td id="pic2">
+		</td>
+	</tr>
+	</tbody></table>
+</div>
+<script type="text/javascript">
+<!--
+	//變數Speed為設定捲軸的速度用 越小越快
+	var Speed=1;
+	//接受setInterval所回傳的值
+	var timer;
+	//取得myDiv的參考用的變數
+	var myDiv = document.getElementById("myDiv");
+	//取得pic2的參考用的變數
+	var pic2= document.getElementById("pic2");
+	//讓pic2的innerHTML等於pic1的innerHTML
+	pic2.innerHTML=document.getElementById("pic1").innerHTML;
+	//用來捲動myDiv捲軸用的主程式
+	function picMarquee(){
+		//若pic2的寬小於myDiv的scrollLeft，表示捲軸已經過了第一行
+		//所以讓Div的scrollLeft再回到原來的位置；反之 則繼續往右跑				
+		if(myDiv.scrollLeft <= 0){
+			myDiv.scrollLeft = pic2.offsetWidth;
+		}else{			
+			myDiv.scrollLeft--;
+		}
+	}	
+	//每Speed毫秒就執行一次pciMarquee()
+	timer=setInterval(picMarquee,Speed);
+	//當滑鼠在myDiv上時 就停止捲動
+	myDiv.onmouseover=function(){
+		clearInterval(timer);
+	}
+	//當滑鼠離開myDiv上時 就繼續往右捲動
+	myDiv.onmouseout=function(){
+		timer=setInterval(picMarquee,Speed);
+	}
+//-->
+</script>
+</body></html>

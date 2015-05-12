@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="author" content="tomin, 黃士銘">
+    <title>Google AJAX Language API - Basic Translation</title>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+    google.load("language", "1");
+    String.prototype.replaceAll  = function(s1,s2){   
+    return this.replace(new RegExp(s1,"gm"),s2);   
+    }  
+	
+	var  ta;
+	var  tb;
+	
+	var ex1a = "半 導 體 裝 置\n顯 示 裝 置\n液 晶 顯 示 裝 置\n電 連 接 器\n電 子 裝 置\n背 光 模 組\n液 晶 顯 示 裝 置\n半 導 體 記 憶 裝 置\n液 晶 顯 示 裝 置\n薄 膜 電 晶 體\n";
+	var ex1b = "semiconductor device\ndisplay device\nliquid crystal display device\nelectrical connector \nelectronic device\nbacklight module\nliquid crystal display\nsemiconductor memory device\nliquid crystal\nthin film transistor\n";
+	var ex2a = "基 材 相 依 性\n銅 薄 膜\n熱 交 換 裝 置\n電 子 元 件 材 料\n接 合 性\n矽 烷 改 質\n功 能 資 訊\n二 極 體 電 壓\n液 晶 排 列 膜\n去 除 餘 料\n";
+	var ex2b = "base material dependence\nbreakdown product\nheat exchange device\noxide film forming apparatus\nbonding wire\nsiliceous filler\nbattery pack\nmemory sensing\nliquid crystal display element\ngroove forming\n";
+	
+	
+    function doTranslate() {
+      google.language.translate(ta, "zh-tw", "en", function(result) {
+        if (!result.error) {
+          var container2 = document.getElementById("translation2");
+   	      container2.innerHTML = "以下來自左上「中翻英」：<br/>" + result.translation.replaceAll(". --------", "<br/>");
+        }
+      });
+	  
+      google.language.translate(tb, "en", "zh-tw", function(result) {
+        if (!result.error) {
+          var container = document.getElementById("translation");
+          container.innerHTML = "以下來自右上「英翻中」：<br/>" + result.translation;
+        }
+      });	  
+    }
+    //google.setOnLoadCallback(initialize);
+
+	
+	function doCheck() {
+		ta = document.getElementById("ta").value.replaceAll("\n", "。--------");
+		tb = document.getElementById("tb").value.replaceAll("\n", "<br/>");
+	
+		doTranslate();
+		return false;
+	}
+	
+	function loadex1(){
+		document.getElementById("ta").value = ex1a;
+		document.getElementById("tb").value = ex1b;
+		doCheck();
+	}
+
+	function loadex2(){
+		document.getElementById("ta").value = ex2a;
+		document.getElementById("tb").value = ex2b;
+		doCheck();
+	}
+
+    </script>
+	
+	<style>
+	#translation{
+		float: left;
+		font-size: 16px;
+		width: 430px;
+		height: 300px;
+		color: blue;		
+	}
+	
+	#translation2{
+		font-size: 16px;
+		width: 400px;
+		height: 300px;
+		color: green;
+	}	
+	
+	#ex{
+		position: absolute;
+		top: 17px;
+		left: 870px;
+		float: left;
+	}
+	
+	</style>
+  </head>
+
+  <body>
+  <form name="form1" id="form1" method="post" action="">
+    <p>
+      <textarea name="textarea" cols="50" rows="11" id="ta" style="color:green">請輸入中文</textarea>
+      <textarea name="textarea2" cols="50" rows="11" id="tb" style="color:blue">Please input English</textarea>   
+   <input type="button" name="Submit" value="中英交叉檢查" onclick="doCheck();" />
+    </p>
+  </form>
+  	<span id="ex">載入：<br/><a href="#" onclick="loadex1(); return false;">範例一</a><br/><a href="#" onclick="loadex2(); return false;">範例二</a></span>
+    <span id="translation"></span>
+	<span id="translation2"></span>
+  </body>
+</html>

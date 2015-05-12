@@ -1,0 +1,58 @@
+更方便地瀏覽PTT BBS網頁板。
+特色：
+1.乾淨的閱讀環境
+2.流暢的操作
+3.影音圖片內嵌
+4.支援鍵盤左右鍵切換文章、列表
+5.短網址偵測
+
+More convenient to browse Web PTT BBS
+Features:
+1.Neat enviroments for reading
+2.Fluent operation
+3.Videos, music, images embedded
+4.Support keyboard browsing (left and right arrows)
+5.Short URLs Detection
+
+預覽圖 Screenshots
+．影片內嵌 Video embedded
+<a href="http://ppt.cc/J@qu"><img src="http://ppt.cc/J@qu@.jpg"></a>
+．圖片內嵌 Image embedded
+<a href="http://ppt.cc/SWPp"><img src="http://ppt.cc/SWPp@.jpg"></a>
+
+changelog:
+0.35
+Patches for "Short links":
+Detect the redirect link of short URLs, including PPT.cc, goo.gl, tinyurl.com, 0rz.tw, flic.kr, using YQL. 
+Hyperlink use the original long links but the appearance is still short link. (You may see the long link on the status bar of browser while mouseover.)
+Shortlinks are now transformed into multimedia instead of text links only, if it's available.
+
+0.34
+Set ajax async instead of sync
+
+0.33
+Fix some post navigation "bugs" added by PTT recently
+
+0.32
+support keyboard browsing across article lists
+disable keyboard browsing during inputting
+fix missing article problem while skipping deleted articles
+improve performance slightly
+
+0.31
+fix deleted links across pages
+improve performance
+update url pattern
+
+0.3
+support keyboard browsing (left and right arrow)
+hint for the last/first article
+deal deleted links with hiding and redirecting
+update url pattern
+
+0.2
+add version check button
+update url pattern
+
+0.1
+initial release

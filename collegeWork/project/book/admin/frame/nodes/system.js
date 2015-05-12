@@ -1,0 +1,6 @@
+  aux1 = insFld(foldersTree, gFld("系統作業", "javascript:parent.op()"))
+	  insDoc(aux1, gLnk("R", "使用者及密碼設定", "../system/user.jsp"))
+      insDoc(aux1, gLnk("R", "環境設定", "../system/class.jsp"))
+      insDoc(aux1, gLnk("R", "刪除資料", "../system/delete.jsp"))
+	  insDoc(aux1, gLnk("R", "資料備份", "../system/backup.jsp"))
+	  insDoc(aux1, gLnk("R", "資料還原", "../system/recover.jsp"))

@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="author" content="tomin">
+    <title>BBS Push Counter</title>
+	
+    <script type="text/javascript">	
+	var  ta;
+	
+	var ex1 = "推 moocow:不知道有沒有記得桃太郎傳說 @@                            11/03 00:07"
++ "\n→ terry761109:動不動就毀滅地球                                    11/03 00:07"
++ "\n推 estupid:回億文                                                  11/03 00:07"
++ "\n→ klarc:記得以前也都有伊索寓言或格林童話這種的卡通                11/03 00:07"
++ "\n推 startlequiet:灌籃高手吧 從連載到重播 作者死了大概五十幾次       11/03 00:07"
++ "\n推 sr20detll:我的印象是藍色小精靈                                  11/03 00:07"
++ "\n推 goenitz7777:我要魔動王                                          11/03 00:07";
+	
+	
+	var ex2 = "推 DOTAZAN:只能嘆息.../PAL                                         11/02 23:26 "
++ "\n推 NinJa0o0:恩 你開竅了                                            11/02 23:26 "
++ "\n→ gekisen:你po這篇就真的錯了                                      11/02 23:26 "
++ "\n推 cvas:多大人沒錯 都是我的錯 文張沒寫清楚                         11/02 23:26"
++ "\n推 darkmacabre:頭推                                                11/02 23:26"
++ "\n推 labapon:多大人威猛                                              11/02 23:26"
++ "\n推 darkey1130:我只看到來福在咬常威...                              11/02 23:26"
++ "\n→ damnedfish:你po這篇就真的錯了                                   11/02 23:27"
++ "\n推 wilbur15nov:      多大人沒錯 都是我的錯 文張沒寫清楚            11/02 23:27"
++ "\n→ moara:p幣推                                                     11/02 23:27"
++ "\n推 tiphreth:原po XD                                                11/02 23:27"
++ "\n→ duolon:我今天只是講一些事實而已沒別的意思 有問題的團一直都很多  11/02 23:27"
++ "\n推 gwava:多大人萬歲                                                11/02 23:27"
++ "\n推 Scarletbird:人都射了                                            11/02 23:27"
++ "\n→ eric211924:槓  破10了= =                                        11/02 23:27"
++ "\n推 Elivanta:有諷刺到，給你個GJ                                     11/02 23:27"
++ "\n→ cvas:多大人龍體為重該就寢了                                     11/02 23:28"
++ "\n→ eric211924:25 25~!                                              11/02 23:28"
++ "\n→ smile571:我本來就錯了呀 所以發P幣 讓大家開心依下                11/02 23:28"
++ "\n推 linhaha:多大人沒錯 都是我的錯 文張沒寫清楚 多大人何苦           11/02 23:28"
++ "\n推 a80055power:= =                                                 11/02 23:28"
++ "\n→ gwava:多大人認真的接受你的道歉了XD                              11/02 23:28"
++ "\n→ smile571:SCAR 紅包我寄出了                                      11/02 23:28"
++ "\n推 labapon:多大人沒錯 都是我的錯 文張沒寫清楚                      11/02 23:28"
++ "\n→ SITC:文\"章\"啦…                                                 11/02 23:28"
++ "\n推 windful:多大人 偉哉  死的都說成活的                             11/02 23:28"
++ "\n→ JokerAct:你po了這篇就裡外都輸了..孩子...                        11/02 23:29"
++ "\n噓 manylove23:你po這篇就真的錯了                                   11/02 23:29"
++ "\n→ sixtyfour:多大人好棒~~~                                         11/02 23:29"
++ "\n推 BROCK7310:哆籠:不知何年何月 得償所望                            11/02 23:29"
++ "\n推 OR1CHI:=_=很好很理性                                            11/02 23:29"
++ "\n推 ckknkaiya:嘴砲功力超強 不愧是多大人!                            11/02 23:29"
++ "\n推 xien721:錢呀!!!                                                 11/02 23:30"
++ "\n→ Scarletbird:收到錢了46圓 謝謝原PO!!!!!!!!!!!!!!XD               11/02 23:30"
++ "\n推 BlackMair:多大人是噓文的那個還是吃洨的那個?                     11/02 23:31"
++ "\n推 tiphreth:many別這樣~熱鬧一下而已咩XD                            11/02 23:31"
++ "\n→ arashiaoi:...                                                   11/02 23:31"
++ "\n推 lunasdejavu:推推                                                11/02 23:31"
++ "\n推 maehara:多大人萬歲                                              11/02 23:31";
+	var ex3 = "本程式採用創用CC－姓名標示─非商業性─相同方式分享 2.5 台灣。\nhttp://creativecommons.org/licenses/by-nc-sa/2.5/tw/\ntomin 2008.11.03";
+		
+
+	function doCheck() {
+		document.getElementById("translation").innerHTML = "Now loading...";
+		ta = "\n" + document.getElementById("ta").value;
+		
+		var i=1;
+		for(i=1;i<500;i++){
+			ta = ta.replace("\n推 " ,  "\nfloor<span class=\"pushNum\">" + i + "</span>tempPush " );
+			ta = ta.replace("\n噓 " ,  "\nfloor<span class=\"booNum\">" + i + "</span>tempBoo " );
+			ta = ta.replace("\n→ " ,  "\nfloor<span class=\"arrowNum\">" + i + "</span>tempArrow " );
+		}
+
+
+		
+		for(i=1;i<1000;i++){
+			ta = ta.replace("floor"	,  "<span class=\"lo\">" + i + "樓</span>");
+		}		
+		
+		
+		ta = ta.replace(/tempPush/g, "<span class=\"push\">推</span>" );
+		ta = ta.replace(/tempBoo/g, "<span class=\"boo\">噓</span>" );				
+		ta = ta.replace(/tempArrow/g, "<span class=\"arrow\">→</span>" );
+		ta = ta.replace(/\n/g, "<br/>" );
+		ta = ta.replace(/  /g, "&nbsp;&nbsp;" );
+		
+		document.getElementById("translation").innerHTML = ta;
+		return false;
+	}
+	
+	function loadex1(){
+		document.getElementById("ta").value = ex1;
+		doCheck();
+	}
+
+	function loadex2(){
+		document.getElementById("ta").value = ex2;
+		doCheck();
+	}
+
+	function loadex3(){
+		document.getElementById("ta").value = ex3;
+		document.getElementById("translation").innerHTML = "";
+	}
+		
+	function setfocus(){
+	        document.form1.textarea.focus();
+	        return;
+	}	
+	
+    </script>
+	
+	<style>
+	#translation{
+		float: left;
+		font-size: 16px;		
+	}
+
+	#ex{
+		position: absolute;
+		font-size: 14px;
+		top: 17px;
+		left: 870px;
+		float: left;
+	}
+	
+	.pushNum, .booNum, .arrowNum{
+		text-align: right;
+		margin-right: 5px;
+		float: left;
+		width: 24px;
+		color: blue;
+	}
+
+	.booNum{	
+		color: green;
+	}
+	
+    .arrowNum{	
+		color: #cccccc;
+	}	
+
+	.lo{
+		text-align: right;
+		margin-right: 7px;
+		float: left;
+		width: 46px;		
+	}	
+
+	
+	.arrow{
+		color: #cccccc;
+	}
+	
+	.boo{
+		color: #bb1100;
+	}	
+	
+	#ta{
+		color: green;	
+	}
+	
+	</style>
+  </head>
+
+  <body onload="setfocus()">
+  <form name="form1" id="form1" method="post" action="">
+    <p>
+      <textarea name="textarea" cols="104" rows="8" id="ta">你好，我是BBS推文計算機。請在此輸入推文。</textarea>
+   <input type="button" name="Submit" value="送出" onclick="doCheck();" />
+    </p>
+  </form>
+  	<span id="ex">範例：<br /><a href="#" onclick="loadex1(); return false;">卡通</a><br />
+	<a href="#" onclick="loadex2(); return false;">魔獸世界</a><br /><br />
+	<a href="#" onclick="loadex3(); return false;">關於本程式</a>
+	</span>
+    <span id="translation"></span>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+    <servlet>
+      <servlet-name>rss</servlet-name>
+        <servlet-class>rss</servlet-class>
+      <init-param>
+             <param-name>default.feed.type</param-name>
+             <param-value>rss_2.0</param-value>
+      </init-param>		
+    </servlet>
+	
+    <servlet-mapping>    
+    <servlet-name>rss</servlet-name>
+    <url-pattern>/rss</url-pattern>
+    </servlet-mapping>	
+
+    <servlet>
+      <servlet-name>rss2</servlet-name>
+        <servlet-class>rss2</servlet-class>
+      <init-param>
+             <param-name>default.feed.type</param-name>
+             <param-value>rss_2.0</param-value>
+      </init-param>		
+    </servlet>
+	
+    <servlet-mapping>    
+    <servlet-name>rss2</servlet-name>
+    <url-pattern>/rss2</url-pattern>
+    </servlet-mapping>		
+    
+</web-app>

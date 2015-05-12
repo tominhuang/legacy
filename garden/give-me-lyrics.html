@@ -1,0 +1,128 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>給我歌詞 - LyricWiki</title>
+<script type="text/javascript">
+/* 
+ * 1 July 2008, Stefan Fussenegger
+ * 27 Sep 2008, Tommy Huang
+ * Public Domain Dedication
+ * http://creativecommons.org/licenses/publicdomain/
+ */
+
+// last script node
+var script = undefined;
+
+function write(song) {
+  if (!song) alert("no song");
+  document.getElementById('artist').innerHTML = song.artist;
+  document.getElementById('name').innerHTML = song.song;
+  document.getElementById('lyrics').innerHTML = song.lyrics.replace(/\n/g, "<br />");
+  
+  var url = document.getElementById('url');
+  url.innerHTML = song.url;
+  url.href = song.url;
+
+  document.getElementById('all').style.visibility = "visible";
+}
+
+function loadJavaScript(url) {
+  var head = document.getElementsByTagName('head')[0]
+  var callback = function() {write(song)}
+
+  if (script) {
+    script.onReadyStateChange = null
+    head.removeChild(script)
+  }
+  script = document.createElement("script")
+  script.setAttribute("type", "text/javascript")
+  script.setAttribute("src", url)
+  script.setAttribute("charset", "utf-8")
+  head.appendChild(script)
+
+  if (script.addEventListener) {
+    // firefox and opera
+    script.addEventListener("load", callback, false)
+  } else if (document.all && !window.opera) {
+    // IE
+    script.onreadystatechange=function(){
+      if (script.readyState == "loaded") {
+        callback()
+        script.onReadyStateChange = null
+      }
+    }
+  }
+}
+
+function getSong(artistName, songName) {
+  var url = "http://lyricwiki.org/api.php?artist=" + encodeURIComponent(artistName) + "&song=" + encodeURIComponent(songName) + "&fmt=js"
+  document.form.artist.value = artistName
+  document.form.song.value = songName
+  loadJavaScript(url)
+}
+
+function getMsg()
+{
+	var artist = document.form.artist.value;
+	var song = document.form.song.value;   
+	getSong(artist, song)
+}
+
+function hide(){
+	document.getElementById("ex").style.display = "none";
+	document.getElementById("isShow").innerHTML = "<a href=\"javascript:show()\">顯示範例</a>";
+}
+
+function show(){
+	document.getElementById("ex").style.display = "block";
+	document.getElementById("isShow").innerHTML = "<a href=\"javascript:hide()\">隱藏範例</a>";
+}
+
+
+</script>
+</head>
+<body onload="document.form.artist.focus()">
+
+<h2>給我歌詞</h2>
+	<form name="form" method="get" action="" onsubmit="getMsg();return false" >
+	歌手：<input type="text" name="artist">
+	歌曲：<input type="text" name="song">		
+	<input type="submit" name="Submit" value="送出">
+	<span id="isShow"><a href="javascript:hide()">隱藏範例</a></span>
+	</form>	
+<br/>
+
+<div id="ex">
+範例：
+1.<a href="javascript:getSong('1976','態度')">1976 - 態度</a>
+2.<a href="javascript:getSong('Tizzy Bac','想要得不到')">Tizzy Bac - 想要得不到</a>
+3.<a href="javascript:getSong('回聲樂團','木雕輪盤')">回聲樂團 - 木雕輪盤</a>
+4.<a href="javascript:getSong('929','簡單的方式')">929 - 簡單的方式</a>
+5.<a href="javascript:getSong('Beyond','海闊天空')">Beyond - 海闊天空</a><br/>
+6.<a href="javascript:getSong('張惠妹','人質')">張惠妹 - 人質</a>
+7.<a href="javascript:getSong('楊乃文','之前')">楊乃文 - 之前</a>
+8.<a href="javascript:getSong('王菲','無奈那天')">王菲 - 無奈那天</a>
+9.<a href="javascript:getSong('濁水溪公社','歡喜渡慈航')">濁水溪公社 - 歡喜渡慈航</a>
+10.<a href="javascript:getSong('交工樂隊','菊花夜行軍')">交工樂隊 - 菊花夜行軍</a>
+<br/><br/>
+</div>
+
+<div id="all" style="visibility: hidden;">
+  <div>
+    <strong><span id="artist"></span> - <span id="name"></strong>
+  </div>
+  <div><p id="lyrics"></p></div>
+  <div><a href="#" id="url"></a></div>
+</div>
+
+
+<br/><br/>
+<hr/>
+<div>
+  <em>1 July 2008, Stefan Fussenegger; 27 Sep 2008, <a href="http://lyricwiki.org/User_talk:Tomin">Tommy Huang</a></em>
+  <a href="http://creativecommons.org/licenses/publicdomain/">Public Domain Dedication</a>
+</div>
+</body>
+</html>

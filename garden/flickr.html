@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<title>JSON Flickr Feed Test</title>
+</head>
+
+<body style="margin:2px">
+
+	<div id="refresh" style="margin-bottom:4px"><input type="button" value="Refresh Photos"></div>
+	<div id="images"></div>
+
+	<script type="text/javascript">
+		function flickrFeed() {		
+			$.getJSON("http://www.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=?",
+				function(json){
+				  $("#images").html("");//reset
+				  $.each(json.items, function(i,item){
+					var images=
+						[
+							'<span style="margin:4px;">',
+								'<a href="', item.link, '" title="', item.title, '">',
+									'<img src="', item.media.m, '" border="0" />',
+								'</a>',
+							'</span>'
+						].join('');
+				
+					$(images).appendTo("#images");
+					if ( i == 7 ) return false;
+				  });
+			});
+		}
+		
+		$("#refresh").bind("click",flickrFeed);
+		
+		flickrFeed();
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,30 @@
+.title{
+border:1px solid #666;
+padding:4px;
+color:white;
+background-color:#24618E;
+}
+.taskDescription,.evidenceAll{
+border-left:1px solid #666;
+border-right:1px solid #666;
+border-bottom:1px solid #666;
+padding:4px;
+}
+.content{
+display:none;
+}
+.each:hover{
+background:gray;
+background:yellow;
+}
+.summary:hover{
+color:blue;
+font-weight:bold;
+cursor:pointer;
+}
+#task{
+margin-top:24px;
+}
+.checked{
+background:lightblue;
+}

@@ -1,0 +1,7 @@
+  aux1 = insFld(foldersTree, gFld("會員資料管理", "javascript:parent.op()"))
+      insDoc(aux1, gLnk("R", "新增會員資料", "../member/add.jsp"))
+      insDoc(aux1, gLnk("R", "修改會員資料", "../member/edit.jsp"))
+    aux2 = insFld(aux1, gFld("查詢會員資料", "javascript:parent.op()"))	  
+      insDoc(aux2, gLnk("R", "查詢全部項目", "../member/query_all.jsp"))
+      insDoc(aux2, gLnk("R", "單項查詢", "../member/query_single.jsp"))
+      insDoc(aux2, gLnk("R", "異常明細查詢", "../member/query_abnormal.jsp"))	 

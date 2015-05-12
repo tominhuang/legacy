@@ -1,0 +1,17 @@
+<script>
+function picA(){
+	document.getElementById("web").href="http://tw.yahoo.com";
+	document.getElementById("pic").src="http://l.yimg.com/f/i/tw/hp/mh/08logo.gif";
+	setTimeout("picB()", 3000 )
+}
+function picB(){
+	document.getElementById("web").href="http://www.google.com.tw";
+	document.getElementById("pic").src="http://www.google.com.tw/intl/en_com/images/logo_plain.png";
+	setTimeout("picA()", 3000 )
+}
+</script>
+
+<body onload="picA()">
+<a href="http://tw.yahoo.com" id="web" target="_blank">
+<img id="pic" border="0" src="http://l.yimg.com/f/i/tw/hp/mh/08logo.gif"></a>
+</body>

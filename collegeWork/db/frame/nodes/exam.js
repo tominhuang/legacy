@@ -1,0 +1,7 @@
+  aux1 = insFld(foldersTree, gFld("健檢資料管理", "javascript:parent.op()"))
+      insDoc(aux1, gLnk("R", "新增健檢資料", "../exam/add.jsp"))
+      insDoc(aux1, gLnk("R", "修改健檢資料", "../exam/edit.jsp"))
+    aux2 = insFld(aux1, gFld("查詢健檢資料", "javascript:parent.op()"))	  
+      insDoc(aux2, gLnk("R", "查詢全部項目", "../exam/query_all.jsp"))
+      insDoc(aux2, gLnk("R", "單項查詢", "../exam/query_single.jsp"))
+      insDoc(aux2, gLnk("R", "異常明細查詢", "../exam/query_abnormal.jsp"))	 

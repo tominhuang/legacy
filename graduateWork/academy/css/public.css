@@ -1,0 +1,114 @@
+#wrapper #main #left { 
+float : left; 
+width : 760px;
+min-height: 690px;
+margin-top : 24px; 
+margin-bottom : 2px;
+} 
+#wrapper #main #left #global_content { 
+min-width: 670px;
+margin-left : 50px; 
+font-size : 12px; 
+font-family : Arial; 
+float:left;
+margin-top:24px;
+} 
+#wrapper #main #left #sitemap { 
+float : left; 
+font-size : 13px; 
+padding : 4px 8px 3px 0px; 
+margin-left:1px;
+color:#1267a3;
+font-weight:bold;
+} 
+#wrapper #main .right { 
+float : right; 
+width : 166px; 
+margin-top : 24px; 
+text-align:left;
+} 
+#wrapper #main .right .right_title { 
+margin-left : 6px; 
+} 
+#wrapper #main .right .right_inside { 
+font-size : 11px; 
+color : #111; 
+padding : 8px 0px 14px 10px; 
+margin-right: 2px;
+} 
+#wrapper #main .right .right_inside .info_link { 
+margin-top : 8px;
+} 
+#wrapper #main .right #info3_inside,#wrapper #main .right #info4_inside{ 
+padding-top:6px;
+padding-left:44px;
+}
+#wrapper #main .right #info5_inside{ 
+padding-top:6px;
+padding-left:34px;
+}
+#info3{
+height: 180px;
+width: 158px;
+background-image: url(../images/template.jpg);
+background-repeat:no-repeat;	
+background-position:-805px -417px;
+}
+#info4{
+height: 220px;
+width: 158px;
+background-image: url(../images/template.jpg);
+background-repeat:no-repeat;	
+background-position:-805px -632px;
+}
+#info5{
+height: 535px;
+width: 158px;
+background-image: url(../images/template.jpg);
+background-repeat:no-repeat;	
+background-position:-805px -894px;
+}
+img{
+border:0;
+} 
+.clear{
+clear:both;
+}
+.right{
+text-align:right;
+}
+.center{
+text-align:center;
+}
+.floatR{
+float:right;
+clear:both;
+}
+.border{
+border:1px solid #000;
+}
+.marginLeft{
+margin-left:64px;
+}
+.marginLeftShort{
+margin-left:32px;
+}
+.marginTop{
+margin-top:30px;
+}
+.ntuTable td{
+padding-left:4px;
+}
+#ntu_home{
+padding-right:4px;
+}
+#wrapper #main #left .global_title_img { 
+margin-top : 22px; 
+margin-bottom : 12px; 
+} 
+#wrapper #main #left .global_content_subtitle { 
+color : #1267a3; 
+font-weight : bold; 
+font-size : 14px; 
+font-family: Tahoma;
+}

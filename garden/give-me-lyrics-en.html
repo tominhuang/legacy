@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Give Me Lyrics - LyricWiki</title>
+<script type="text/javascript">
+/* 
+ * 1 July 2008, Stefan Fussenegger
+ * 27 Sep 2008, Tommy Huang
+ * Public Domain Dedication
+ * http://creativecommons.org/licenses/publicdomain/
+ */
+
+// last script node
+var script = undefined;
+
+function write(song) {
+  if (!song) alert("no song");
+  document.getElementById('artist').innerHTML = song.artist;
+  document.getElementById('name').innerHTML = song.song;
+  document.getElementById('lyrics').innerHTML = song.lyrics.replace(/\n/g, "<br />");
+  
+  var url = document.getElementById('url');
+  url.innerHTML = song.url;
+  url.href = song.url;
+
+  document.getElementById('all').style.display = "block";
+}
+
+function loadJavaScript(url) {
+  var head = document.getElementsByTagName('head')[0]
+  var callback = function() {write(song)}
+
+  if (script) {
+    script.onReadyStateChange = null
+    head.removeChild(script)
+  }
+  script = document.createElement("script")
+  script.setAttribute("type", "text/javascript")
+  script.setAttribute("src", url)
+  script.setAttribute("charset", "utf-8")
+  head.appendChild(script)
+
+  if (script.addEventListener) {
+    // firefox and opera
+    script.addEventListener("load", callback, false)
+  } else if (script.attachEvent) {
+    // IE
+	window.attachEvent("onload", callback)
+  } else{
+	//script.onload= callback;
+  }
+}
+
+function getSong(artistName, songName) {
+  var url = "http://lyricwiki.org/api.php?artist=" + encodeURIComponent(artistName) + "&song=" + encodeURIComponent(songName) + "&fmt=js"
+  document.form.artist.value = artistName
+  document.form.song.value = songName
+  loadJavaScript(url)
+}
+
+function getMsg()
+{
+	var artist = document.form.artist.value;
+	var song = document.form.song.value;   
+	getSong(artist, song)
+}
+
+function hide(){
+	document.getElementById("ex").style.display = "none";
+	document.getElementById("isShow").innerHTML = "<a href=\"javascript:show()\">Show Examples</a>";
+}
+
+function show(){
+	document.getElementById("ex").style.display = "block";
+	document.getElementById("isShow").innerHTML = "<a href=\"javascript:hide()\">Hide Examples</a>";
+}
+
+
+</script>
+</head>
+<body onload="document.form.artist.focus()">
+
+<h2>Give Me Lyrics</h2>
+	<form name="form" method="get" action="" onsubmit="getMsg();return false" >
+	Artist:<input type="text" name="artist">
+	Song:<input type="text" name="song">		
+	<input type="submit" name="Submit" value="Submit">
+	<span id="isShow"><a href="javascript:hide()">Hide Examples</a></span>
+	</form>	
+<br/>
+
+<div id="ex">
+Examples:
+1.<a href="javascript:getSong('The Rolling Stones','19th Nervous Breakdown')">The Rolling Stones - 19th Nervous Breakdown</a>
+2.<a href="javascript:getSong('The Rolling Stones','Paint it Black')">The Rolling Stones - Paint it Black</a>
+3.<a href="javascript:getSong('Nena','99 Luftballons')">Nena - 99 Luftballons</a><br/>
+4.<a href="javascript:getSong('U2','With Or Without You')">U2 -With Or Without You</a>
+5.<a href="javascript:getSong('Coldplay','Viva La Vida')">Coldplay - Viva La Vida</a>
+6.<a href="javascript:getSong('The Beatles','Help!')">The Beatles - Help!</a>
+7.<a href="javascript:getSong('James','Hey Ma')">James - Hey Ma</a>
+8.<a href="javascript:getSong('Oasis','Live Forever')">Oasis - Live Forever</a>
+<br/><br/>
+</div>
+
+<div id="all" style="display: none">
+  <div>
+    <strong><span id="artist"></span> - <span id="name"></strong>
+  </div>
+  <div><p id="lyrics"></p></div>
+  <div><a href="#" id="url"></a></div>
+</div>
+
+
+<br/><br/>
+<hr/>
+<div>
+  <em>1 July 2008, Stefan Fussenegger; 27 Sep 2008, <a href="http://lyricwiki.org/User_talk:Tomin">Tommy Huang</a></em>
+  <a href="http://creativecommons.org/licenses/publicdomain/">Public Domain Dedication</a>
+</div>
+</body>
+</html>

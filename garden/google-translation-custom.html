@@ -1,0 +1,356 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="author" content="tomin">
+    <title>Google AJAX Language API Custom</title>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+	/*   
+	 *   本程式採用創用CC－姓名標示─非商業性─相同方式分享 2.5 台灣
+	 *	 http://creativecommons.org/licenses/by-nc-sa/2.5/tw/
+	 *	 tomin 2008.11.15
+	 */
+
+    google.load("language", "1");
+    String.prototype.replaceAll  = function(s1,s2){   
+		return this.replace(new RegExp(s1,"gm"),s2);   
+    }  	
+	
+	var  ta;	
+		
+    function doTranslate() {
+		var temp = "";
+		var mode;
+				
+		if(ta.length>33 || ta.match("\n")!=null){//多字或多行
+			mode = "multiple";
+		}
+		ta = ta.replaceAll("\n", "######");
+		
+		if(document.form1.checkbox1.checked == true){
+			google.language.translate(ta, "", "zh-tw", function(result) {
+			  if (!result.error) {		    			
+				if(mode=="multiple"){
+					temp += "<div class=\"languageType\">繁體中文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") + "</div>";
+				}else{
+					temp += "．繁體中文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+				}
+			  }
+			});
+		}		
+		
+		if(document.form1.checkbox2.checked == true){
+			google.language.translate(ta, "", "zh-cn", function(result) {
+			  if (!result.error) {		    			
+				if(mode=="multiple"){
+					temp += "<div class=\"languageType\">簡體中文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+				}else{
+					temp += "．簡體中文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+				}
+			  }
+			});
+		}
+		
+		if(document.form1.checkbox3.checked == true){	
+			google.language.translate(ta, "", "en", function(result) {
+			  if (!result.error) {
+				if(mode=="multiple"){
+					temp += "<div class=\"languageType\">英文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+				}else{
+					temp += "．英文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+				}
+			  }
+			});
+		}
+	
+		if(document.form1.checkbox4.checked == true){
+			google.language.translate(ta, "", "ja", function(result) {
+			  if (!result.error) {		    
+				if(mode=="multiple"){
+					temp += "<div class=\"languageType\">日文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+				}else{
+					temp += "．日文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+				}
+			  }
+			});
+		}
+
+		if(document.form1.checkbox5.checked == true){	
+			google.language.translate(ta, "", "ko", function(result) {
+			  if (!result.error) {
+				if(mode=="multiple"){
+					temp += "<div class=\"languageType\">韓文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+				}else{
+					temp += "．韓文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+				}
+			  }
+			});	
+		}			
+
+		if(document.form1.checkbox6.checked == true){		
+			google.language.translate(ta, "", "ru", function(result) {
+			  if (!result.error) {
+				if(mode=="multiple"){
+					temp += "<div class=\"languageType\">俄文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+				}else{
+					temp += "．俄文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+				}
+			  }
+			});	
+		}					
+
+		if(document.form1.checkbox7.checked == true){		
+			google.language.translate(ta, "", "it", function(result) {
+			  if (!result.error) {
+				if(mode=="multiple"){
+					temp += "<div class=\"languageType\">義大利文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+				}else{
+					temp += "．義大利文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+				}
+			  }
+			});
+		}			
+
+		if(document.form1.checkbox8.checked == true){		
+			google.language.translate(ta, "", "es", function(result) {
+			  if (!result.error) {
+				if(mode=="multiple"){
+					temp += "<div class=\"languageType\">西班牙文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+				}else{
+					temp += "．西班牙文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+				}
+			  }
+			});
+		}
+
+		if(document.form1.checkbox9.checked == true){				
+			google.language.translate(ta, "", "pt", function(result) {
+			  if (!result.error) {
+				if(mode=="multiple"){
+					temp += "<div class=\"languageType\">葡萄牙文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+				}else{
+					temp += "．葡萄牙文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+				}
+			  }
+			});
+		}		
+
+		if(document.form1.checkbox10.checked == true){				
+			google.language.translate(ta, "", "de", function(result) {
+			  if (!result.error) {
+				if(mode=="multiple"){
+					temp += "<div class=\"languageType\">德文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+				}else{
+					temp += "．德文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+				}
+			  }
+			});
+		}			
+
+		if(document.form1.checkbox11.checked == true){				
+			google.language.translate(ta, "", "fr", function(result) {
+			  if (!result.error) {
+				if(mode=="multiple"){
+					temp += "<div class=\"languageType\">法文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+				}else{
+					temp += "．法文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+				}
+			  }
+			});		
+		}			
+		
+		if(document.form1.checkbox12.checked == true){
+			google.language.translate(ta, "", "hi", function(result) {
+			  if (!result.error) {		  
+				if(mode=="multiple"){
+					temp += "<div class=\"languageType\">印度文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+				}else{
+					temp += "．印度文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+				}		
+			  }
+			});					
+		}
+		
+		if(document.form1.checkbox13.checked == true){		
+			google.language.translate(ta, "", "cs", function(result) {
+			  if (!result.error) {		  
+				if(mode=="multiple"){
+					temp += "<div class=\"languageType\">捷克文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+				}else{
+					temp += "．捷克文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+				}		
+			  }
+			});	
+		}		
+		
+		if(document.form1.checkbox14.checked == true){
+			google.language.translate(ta, "", "pl", function(result) {
+			  if (!result.error) {		  
+				if(mode=="multiple"){
+					temp += "<div class=\"languageType\">波蘭文</div><div class=\"languageResult\">" + result.translation.replaceAll("######", "<br />") +  "</div>";
+				}else{
+					temp += "．波蘭文：" + result.translation.replaceAll("######", "<br />") +  "<br />";
+				}		
+			  }
+			});					
+		}		
+		
+		google.language.translate("", "", "hi", function(result) {
+			//must contain inside, weird
+	  		var container = document.getElementById("translation");
+			container.innerHTML = temp;
+		});	
+		
+			
+    }
+    	
+	function doCheck() {
+		ta = document.getElementById("ta").value;
+		document.getElementById("translation").innerHTML = "Now loading...";
+		
+		doDetect();
+		doTranslate();
+		return false;
+	}
+	
+	
+
+    function doDetect() {
+      
+      google.language.detect(ta, function(result) {
+        if (!result.error) {
+          var language = 'unknown';
+          for (l in google.language.Languages) {
+            if (google.language.Languages[l] == result.language) {
+              language = l;
+              break;
+            }
+          }
+		   var container = document.getElementById("detection");
+           container.innerHTML = "＃你輸入的語言是 <b>" + language + "</b>";
+        }
+      });
+ 	  
+    }
+	
+	function hide(){
+		document.getElementById("custom").style.display = "none";
+		document.getElementById("hideshow").innerHTML = "<input type=\"button\" name=\"Submit\" value=\"顯示語言列\" onclick=\"show();\" />";
+	}
+	
+	function show(){
+		document.getElementById("custom").style.display = "block";
+		document.getElementById("hideshow").innerHTML = "<input type=\"button\" name=\"Submit\" value=\"隱藏語言列\" onclick=\"hide();\" />";
+	}	
+	
+	function setfocus(){
+	        document.form1.textarea.focus();
+	        return;
+	}	
+	
+	google.setOnLoadCallback(setfocus);
+    </script>
+	
+	<style>
+	#translation{
+		float: left;
+		font-size: 16px;
+		
+	}
+
+	#detection{
+		float: left;
+		width: 100%;	
+		font-size: 16px;
+		margin: 12px 0px 12px 0px;	
+	}
+	
+	.languageType{
+		background: #EBFAFF;
+		border-left:12px solid #DBD4FA;
+		border-right:5.4em solid #DBD4FA;		
+		color: #990024;
+		font-size: 16px;
+		padding:3px;
+		width: 888px;
+	}
+	
+	.languageResult{
+		margin-bottom: 23px;
+		width: 888px;
+	}
+	
+	#ta{
+		color: green;	
+	}
+	
+	#custom{
+		margin-top: 18px;
+		float: left;
+		width: 100%;
+	}
+	
+	#custom-1,#custom-2{
+		width: 888px;
+	}
+	
+	#custom-1{
+		margin-top: 4px;		
+	}
+	
+	.checkboxs{
+		float: left;
+		width: 120px;
+		padding: 4px 0px 2px 0px;
+		border: 1px black solid;
+	}
+	
+	#submit{
+		margin-top: 18px;
+		float: left;
+	}
+
+	input{
+		color: #111;
+		font-size:16px;
+		border:1px #AAA solid;
+		background: #EEE;
+	}	
+	
+	</style>
+  </head>
+
+  <body>
+  <form name="form1" id="form1" method="post" action="">
+	    <textarea name="textarea" cols="104" rows="8" id="ta" >請在此輸入你想要翻譯的文字或段落。</textarea>	    
+    <div id="custom">
+	  	請選擇你要的語言：
+		<div id="custom-1">
+		  <span class="checkboxs"><input type="checkbox" name="checkbox1" value="checkbox" checked="checked" />繁體中文</span>
+		  <span class="checkboxs"><input type="checkbox" name="checkbox2" value="checkbox"  />簡體中文</span>
+		  <span class="checkboxs"><input type="checkbox" name="checkbox3" value="checkbox" checked="checked" />英文</span>
+		  <span class="checkboxs"><input type="checkbox" name="checkbox4" value="checkbox" checked="checked" />日文</span>
+		  <span class="checkboxs"><input type="checkbox" name="checkbox5" value="checkbox" />韓文</span>
+		  <span class="checkboxs"><input type="checkbox" name="checkbox6" value="checkbox" />俄文</span>
+   		  <span class="checkboxs"><input type="checkbox" name="checkbox7" value="checkbox" />義大利文</span>
+		</div> 
+		<div id="custom-2">
+		  <span class="checkboxs"><input type="checkbox" name="checkbox8" value="checkbox" />西班牙文</span>
+		  <span class="checkboxs"><input type="checkbox" name="checkbox9" value="checkbox" />葡萄牙文</span>
+		  <span class="checkboxs"><input type="checkbox" name="checkbox10" value="checkbox" />德文</span>						
+		  <span class="checkboxs"><input type="checkbox" name="checkbox11" value="checkbox" />法文</span>
+		  <span class="checkboxs"><input type="checkbox" name="checkbox12" value="checkbox" />印度文</span>
+		  <span class="checkboxs"><input type="checkbox" name="checkbox13" value="checkbox" />捷克文</span>
+		  <span class="checkboxs"><input type="checkbox" name="checkbox14" value="checkbox" />波蘭文</span>
+		</div>
+	</div>
+	<div id="submit"><input type="button" name="Submit" value="翻譯" onclick="doCheck();" /> 
+	<span id="hideshow"><input type="button" name="Submit" value="隱藏語言列" onclick="hide();" /></span>	
+	</div>
+  </form>
+
+	<span id="detection"></span>
+    <span id="translation"></span>
+  </body>
+</html>

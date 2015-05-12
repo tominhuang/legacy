@@ -1,0 +1,80 @@
+body {
+font-size:16px;
+margin:0;
+}
+img{
+border:0;
+background-color:white;
+} 
+a{color:#222;}
+a:hover{color:#000;background-color:yellow;text-decoration:none;cursor:pointer;}
+#wrapper{
+margin: auto;
+width: 800px;
+text-align: left;
+}
+/* Form */
+input,select,textarea{
+background-color : #fff;
+border: 1px solid #aaa;
+}
+input[type=radio],input[type=checkbox]{
+border:0;
+background-color : inherit;
+}
+input:focus{
+border-color:#333;
+background-color : lightyellow;
+}
+input[type=submit],input[type=button]{
+margin-top:12px;
+padding-top:3px;
+padding-left:6px;
+padding-right:6px;
+color: #000;
+border: 2px outset #aaa;
+}
+input[type=submit]:hover,input[type=button]:hover{
+color : white; 
+background-color : #555;
+cursor : pointer; 
+}
+.checkbox,.radiobutton {
+border: 0px;
+}
+.clear{
+clear:both;
+}
+.center{
+text-align: center;
+}
+.right{
+text-align: right;
+}
+.left{
+text-align: left;
+}
+.inputWidth{
+width:150px;
+}
+.errorwords {
+color:red; 
+}
+.gray{
+color:#555;
+}
+.big{
+font-size:16px;
+font-weight:bold;
+margin-bottom:4px;
+}
+.red{
+color:red;
+}
+.purple{
+color:purple;
+}
+.key{
+color:navy;
+font-weight:bold;
+}

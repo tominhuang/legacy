@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/contact/contact-us.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+	</url> 
+	
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/host/NTU.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+	</url> 	
+	
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/host/Taiwan.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+	</url> 
+	
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/host/Gallery.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+	</url>	
+
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/symposium/About-GIS-Taiwan.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+	</url> 
+
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/symposium/topic.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+	</url> 
+
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/symposium/program.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+	</url> 
+
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/symposium/call-for-paticipation.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+	</url> 
+
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/registration/step1.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+	</url> 	
+
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/symposium/committee.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+	</url> 
+
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/member/forum.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+	</url> 
+
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/symposium/Q-and-A.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+	</url> 
+	
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/symposium/Important-Dates.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+	</url> 	
+
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/symposium/Downloads.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+	</url> 	
+	
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/sponsor/downloads.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+	</url>	
+	
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/sponsor/</loc>
+    <lastmod>2009-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+	</url>	
+	
+	<url>
+    <loc>http://gis-taiwan.ntu.edu.tw/index.html</loc>
+    <lastmod>2009-02-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+	</url> 	
+	
+		
+</urlset>

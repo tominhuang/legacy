@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="author" content="tomin" />
+<title>Focus</title>
+<style type="text/css">
+#in{
+border:0 none;
+color:white;
+width:0.1em;
+}
+</style>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load("jquery", "1.4"); </script>
+<script type="text/javascript">
+$(function(){	
+	$("#in").focus();
+	
+	$("#show").click(function(){
+		$("#in").css("border","1px inset");
+		$("#in").css("color","black");
+		$("#in").css("width","22em");
+		$("#in").focus();
+	});	
+});
+</script>
+</head>
+<body>
+<input type="text" id="in">
+
+<br><br>
+<input type="button" id="show" value="Show hidden text above">
+<br><br>
+Key in some words.
+</body>
+</html>

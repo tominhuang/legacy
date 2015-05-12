@@ -1,0 +1,63 @@
+#score{
+float:left;
+width: 70%;
+margin-left: 15%;
+margin-right: 15%;
+margin-top:60px;
+text-align:center;
+font-size: 16px;
+}
+input{
+font-size: 16px;
+}
+.leftitem{
+float:left;
+text-align:right;
+padding-right:8px;
+width:45%;
+}
+.rightitem{
+float:left;
+text-align:left;
+width:53%;
+}
+.leftitems, .rightitems{
+margin-bottom:4px;
+height:22px;
+}
+.righttitle, #rightitems_list{
+padding-left:18px;
+}
+.lefttitle, .righttitle{
+font-weight:bold;
+}
+#preview{
+display:none;
+}
+#preview_content{
+padding:12px;
+text-align:left;
+margin-left:40%;
+}
+#score_result_container{
+display:none;
+border:1px solid #000;
+text-align:center;
+width: 80%;
+margin-left: 10%;
+margin-right: 10%;
+padding-top:12px;
+margin-top:12px;
+margin-bottom:24px;
+}
+#score_result{
+text-align:left;
+margin-left: 43%;
+}
+#score_result_edit{
+text-align:left;
+margin-left: 25%;
+}
+#score_result_form{
+display:none;
+}
